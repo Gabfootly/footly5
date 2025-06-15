@@ -1,0 +1,1 @@
+console.log("Script attivo - logica da implementare.");
