@@ -1,1 +1,0 @@
-// JavaScript per il calcolatore
