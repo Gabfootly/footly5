@@ -24,6 +24,8 @@ Questo progetto è statico (HTML/CSS/JS) ed è pronto per il deploy su:
 
 ## 🛡️ Licenza
 
+AGGIORNATO
+
 **Tutti i diritti riservati** – Non è concessa alcuna licenza di utilizzo o modifica.
 
 ---
