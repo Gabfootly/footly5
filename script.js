@@ -28,6 +28,10 @@ function changeLanguage() {
     document.getElementById("foot-width-label").textContent = lang === "en" ? "Foot width (cm):" : "Larghezza piede (cm):";
     document.getElementById("calculate-button").textContent = lang === "en" ? "Calculate Size" : "Calcola Taglia";
     document.getElementById("note").textContent = lang === "en"
+    document.getElementById("foot-image").alt = lang === "en"
+  ? "Foot measurement instructions"
+  : "Istruzioni di misurazione piede";
+
         ? "⚠️ This tool is intended for users aged 12 and older. Sizes apply to sports shoes like running, trekking and trail."
         : "⚠️ Questo misuratore è pensato per utenti adulti (12+). Le taglie sono valide per attività sportive come running, trekking, trail.";
 }
