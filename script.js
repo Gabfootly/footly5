@@ -31,4 +31,5 @@ function changeLanguage() {
         ? "⚠️ This tool is intended for users aged 12 and older. Sizes apply to sports shoes like running, trekking and trail."
         : "⚠️ Questo misuratore è pensato per utenti adulti (12+). Le taglie sono valide per attività sportive come running, trekking, trail.";
 }
-    changeLanguage();
+   document.getElementById("language").value = "it";
+changeLanguage();
