@@ -1,7 +1,6 @@
-// JavaScript per il calcolatore
-
 function changeLanguage() {
     const lang = document.getElementById("language").value;
+
     document.getElementById("title").textContent = lang === "en" ? "Sports Shoe Size Calculator" : "Misuratore per scarpe sportive";
     document.getElementById("description").textContent = lang === "en"
         ? "Hi! This is a calculator to help you find the correct shoe size for all your sporting activities like running, trail running, nordic walking, and trekking! It also works for Basketball, Volleyball, and Tennis shoes!"
@@ -27,13 +26,19 @@ function changeLanguage() {
     document.getElementById("foot-length-label").textContent = lang === "en" ? "Foot length (cm):" : "Lunghezza piede (cm):";
     document.getElementById("foot-width-label").textContent = lang === "en" ? "Foot width (cm):" : "Larghezza piede (cm):";
     document.getElementById("calculate-button").textContent = lang === "en" ? "Calculate Size" : "Calcola Taglia";
-    document.getElementById("note").textContent = lang === "en"
-    document.getElementById("foot-image").alt = lang === "en"
-  ? "Foot measurement instructions"
-  : "Istruzioni di misurazione piede";
 
+    // ✅ Traduzione del messaggio finale
+    document.getElementById("note").textContent = lang === "en"
         ? "⚠️ This tool is intended for users aged 12 and older. Sizes apply to sports shoes like running, trekking and trail."
         : "⚠️ Questo misuratore è pensato per utenti adulti (12+). Le taglie sono valide per attività sportive come running, trekking, trail.";
+
+    // ✅ Traduzione del testo alternativo dell'immagine
+    document.getElementById("foot-image").alt = lang === "en"
+        ? "Foot measurement instructions"
+        : "Istruzioni di misurazione piede";
 }
-   document.getElementById("language").value = "it";
+
+// Imposta la lingua iniziale
+document.getElementById("language").value = "it";
 changeLanguage();
+
