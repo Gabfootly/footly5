@@ -538,9 +538,15 @@ function changeLanguage() {
     document.getElementById("note").textContent = lang === "en"
         ? "⚠️ This tool is intended for users aged 12 and older. Sizes apply to sports shoes like running, trekking and trail."
         : "⚠️ Questo misuratore è pensato per utenti adulti (12+). Le taglie sono valide per attività sportive come running, trekking, trail.";
-    
+       document.getElementById("foot-image").alt = lang === "en"
+        ? "Foot measurement instructions"
+        : "Istruzioni di misurazione piede";
 }
-
-    </script>
+        
+document.getElementById("language").value = "it";
+changeLanguage();
+        
+   </script>
 </body>
 </html>
+    
