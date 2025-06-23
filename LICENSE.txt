@@ -1,0 +1,15 @@
+Copyright © 2025 - Gabriele Sanzi
+Creatore e titolare esclusivo del progetto “Footly” - www.footly.fit
+
+Tutti i diritti riservati.
+
+Il presente progetto, inclusi codice sorgente HTML, CSS, JavaScript, immagini, testi e loghi, è di proprietà intellettuale di Gabriele Sanzi.
+
+È vietata la copia, distribuzione, modifica o utilizzo, totale o parziale, per scopi commerciali o personali, senza preventiva autorizzazione scritta del titolare.
+
+L’uso non autorizzato del materiale potrà costituire violazione della normativa italiana e internazionale sul diritto d’autore, con conseguenti responsabilità civili e penali.
+
+Per eventuali licenze, collaborazioni o utilizzo commerciale, contattare il titolare tramite i riferimenti ufficiali presenti su www.footly.fit
+
+—
+Questo software è tutelato dalla Legge sul Diritto d’Autore (Legge n. 633/1941 - Italia) e dalle convenzioni internazionali applicabili.

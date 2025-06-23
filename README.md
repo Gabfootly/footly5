@@ -1,33 +1,13 @@
-# Footly - Calcolatore Taglie Scarpe Sportive
+# Footly - Calcolatore di Taglia per Scarpe Sportive
 
-Footly è uno strumento interattivo che aiuta gli utenti a trovare la giusta taglia di scarpe sportive in base alla lunghezza e larghezza del piede.
+Footly è un calcolatore progettato per aiutare gli utenti a trovare la misura perfetta per le scarpe da running, trekking, trail e sport indoor.
 
-## ⚠️ Diritti e Proprietà
+## Come funziona
+L’utente inserisce le misure del proprio piede e il genere. Il calcolatore suggerisce la taglia ideale in formato EU/UK/US.
 
-Tutti i contenuti di questo progetto, inclusi codice, testi, dati e design, sono **proprietà intellettuale riservata** dell'autore.
+## Autore
+🧑‍💻 Creato da **Gabriele Sanzi**
 
-- ❌ Non è consentito copiare, riutilizzare o distribuire senza autorizzazione scritta.
-- ✅ L'autore si riserva tutti i diritti (All Rights Reserved).
-
-## 📁 File Inclusi
-
-- `index.html` – struttura della pagina
-- `style.css` – stile grafico
-- `script.js` – logica del calcolatore
-
-## 📦 Deploy consigliato
-
-Questo progetto è statico (HTML/CSS/JS) ed è pronto per il deploy su:
-- GitHub Pages
-- Vercel
-- Netlify
-
-## 🛡️ Licenza
-
-AGGIORNATO
-
-**Tutti i diritti riservati** – Non è concessa alcuna licenza di utilizzo o modifica.
-
----
-
-Realizzato da: [Il tuo nome o alias]
+## Licenza
+📄 Tutti i diritti riservati © 2025 – Gabriele Sanzi.  
+Consulta `LICENSE.txt` per i dettagli legali.
