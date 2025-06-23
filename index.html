@@ -60,10 +60,7 @@
 <body>
     <div class="container">
         <div>
-            <div style="text-align: center; margin-bottom: 5px;">
-  <img src="logo footly.png" alt="Footly logo" style="max-width: 150px; height: auto;" />
-</div>
-            <label for="language" id="language-label">Lingua / Language:</label>
+            <label for="language">Lingua / Language:</label>
             <select id="language" onchange="changeLanguage()">
                 <option value="it">Italiano</option>
                 <option value="en">English</option>
@@ -80,15 +77,9 @@
 
         <h3 id="how-it-works-heading">Come funziona?</h3>
         <p id="instructions-2">Molto semplice! Prendi un foglio grande più del tuo piede, metti il tuo piede sopra il foglio. Ora disegna la sagoma del tuo piede e con un righello o un metro misura la distanza maggiore dal tallone al tuo dito più lungo. Fai la stessa cosa misurando la distanza tra l'inizio del primo e il quinto metatarso. Ora inserisci le misure che hai ottenuto di lunghezza e larghezza.</p>
-        
-               <div style="text-align: center; margin: 20px 0;">
-   <img src="lunghezza cm lenght cm.png" id="foot-image"
-     alt="Istruzioni di misurazione piede"
-     style="max-width: 60%; height: auto; border-radius: 8px;" />
-</div>
+
         <h4 id="important-heading">IMPORTANTE!</h4>
         <p id="instructions-3">Devi misurare entrambi i piedi! Solitamente uno dei due è più lungo. Devi inserire la lunghezza e la larghezza del piede più lungo!</p>
-
 
         <label for="gender" id="gender-label">Sesso:</label>
         <select id="gender">
@@ -510,66 +501,37 @@ function calcolaTaglia() {
 
 function changeLanguage() {
     const lang = document.getElementById("language").value;
-
-    document.querySelector('label[for="language"]').textContent =
-        lang === "en" ? "Language:" : "Lingua / Language:";
-    
-    document.getElementById("title").textContent = lang === "en"
-        ? "Sports Shoe Size Calculator"
-        : "Misuratore per scarpe sportive";
-
+    document.getElementById("title").textContent = lang === "en" ? "Sports Shoe Size Calculator" : "Misuratore per scarpe sportive";
     document.getElementById("description").textContent = lang === "en"
         ? "This calculator helps you find the right shoe size for activities like running, trail running, nordic walking, trekking, and also for Basketball, Volleyball, and Tennis shoes!"
         : "Ciao! Questo è un calcolatore per farti trovare la taglia corretta della scarpa per tutte le tue attività sportive come running, trail running, nordic walking e trekking! Va bene anche per le scarpe da Basket, Volley e Tennis!";
-
     document.getElementById("how-to-use-heading").textContent = lang === "en"
         ? "How to use the calculator:" : "Come utilizzare il calcolatore:";
-
     document.getElementById("instructions-1").textContent = lang === "en"
         ? "To choose the right size, make sure at least two out of three results (EU, UK, US) match those listed by the brand you're buying from!"
         : "Per far sì che la scelta della taglia per l'acquisto della tua scarpa sia corretta, verifica che almeno due dei tre valori che escono dal risultato corrispondano nelle misure fornite dall'azienda della scarpa che vuoi acquistare! Esempio: se devi acquistare una Nike e il risultato che esce dal tuo calcolo è EU 42, UK 8, US 8.5, devi avere almeno due di queste tre taglie che corrispondono!";
-
     document.getElementById("how-it-works-heading").textContent = lang === "en"
         ? "How it works?" : "Come funziona?";
-
     document.getElementById("instructions-2").textContent = lang === "en"
         ? "Take a sheet of paper, draw the outline of your foot, then measure the distance from the heel to the longest toe and the width at the widest point. Use the longer foot!"
         : "Molto semplice! Prendi un foglio grande più del tuo piede, metti il tuo piede sopra il foglio. Ora disegna la sagoma del tuo piede e con un righello o un metro misura la distanza maggiore dal tallone al tuo dito più lungo. Fai la stessa cosa misurando la distanza tra l'inizio del primo e il quinto metatarso. Ora inserisci le misure che hai ottenuto di lunghezza e larghezza.";
-
     document.getElementById("important-heading").textContent = lang === "en"
         ? "IMPORTANT!" : "IMPORTANTE!";
-
     document.getElementById("instructions-3").textContent = lang === "en"
         ? "Measure both feet! Use the longer one." : "Devi misurare entrambi i piedi! Solitamente uno dei due è più lungo. Devi inserire la lunghezza e la larghezza del piede più lungo!";
-
-    document.getElementById("gender-label").textContent = lang === "en"
-        ? "Gender:" : "Sesso:";
-
-    document.getElementById("male-option").textContent = lang === "en"
-        ? "Male" : "Uomo";
-
-    document.getElementById("female-option").textContent = lang === "en"
-        ? "Female" : "Donna";
-
-    document.getElementById("foot-length-label").textContent = lang === "en"
-        ? "Foot length (cm):" : "Lunghezza piede (cm):";
-
-    document.getElementById("foot-width-label").textContent = lang === "en"
-        ? "Foot width (cm):" : "Larghezza piede (cm):";
-
-    document.getElementById("calculate-button").textContent = lang === "en"
-        ? "Calculate Size" : "Calcola Taglia";
-
+    document.getElementById("gender-label").textContent = lang === "en" ? "Gender:" : "Sesso:";
+    document.getElementById("male-option").textContent = lang === "en" ? "Male" : "Uomo";
+    document.getElementById("female-option").textContent = lang === "en" ? "Female" : "Donna";
+    document.getElementById("foot-length-label").textContent = lang === "en" ? "Foot length (cm):" : "Lunghezza piede (cm):";
+    document.getElementById("foot-width-label").textContent = lang === "en" ? "Foot width (cm):" : "Larghezza piede (cm):";
+    
+    document.getElementById("calculate-button").textContent = lang === "en" ? "Calculate Size" : "Calcola Taglia";
     document.getElementById("note").textContent = lang === "en"
         ? "⚠️ This tool is intended for users aged 12 and older. Sizes apply to sports shoes like running, trekking and trail."
         : "⚠️ Questo misuratore è pensato per utenti adulti (12+). Le taglie sono valide per attività sportive come running, trekking, trail.";
-
-    document.getElementById("foot-image").alt = lang === "en"
-        ? "Foot measurement instructions"
-        : "Istruzioni di misurazione piede";
+    
 }
 
-// 🔽 Questo serve per attivare la lingua italiana di default al caricamento
-document.getElementById("language").value = "it";
-changeLanguage();
-</script>
+    </script>
+</body>
+</html>
