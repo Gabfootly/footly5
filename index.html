@@ -517,8 +517,7 @@ function changeLanguage() {
         ? "Take a sheet of paper, draw the outline of your foot, then measure the distance from the heel to the longest toe and the width at the widest point. Use the longer foot!"
         : "Molto semplice! Prendi un foglio grande più del tuo piede, metti il tuo piede sopra il foglio. Ora disegna la sagoma del tuo piede e con un righello o un metro misura la distanza maggiore dal tallone al tuo dito più lungo. Fai la stessa cosa misurando la distanza tra l'inizio del primo e il quinto metatarso. Ora inserisci le misure che hai ottenuto di lunghezza e larghezza.";
     document.getElementById("important-heading").textContent = lang === "en"
-<img src="lunghezza cm lenght cm.png" alt="Come misurare il piede" style="max-width: 250px; display: block; margin: 20px auto;" />
-<h4 id="important-heading">IMPORTANTE!</h4>
+    ? "IMPORTANT!" : "IMPORTANTE!";
     document.getElementById("instructions-3").textContent = lang === "en"
         ? "Measure both feet! Use the longer one." : "Devi misurare entrambi i piedi! Solitamente uno dei due è più lungo. Devi inserire la lunghezza e la larghezza del piede più lungo!";
     document.getElementById("gender-label").textContent = lang === "en" ? "Gender:" : "Sesso:";
