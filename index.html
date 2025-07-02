@@ -11,6 +11,20 @@
 
   gtag('config', 'G-R95ZFRPRPZ');
 </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const button = document.getElementById("calculate-button");
+    if (button) {
+      button.addEventListener("click", function () {
+        gtag('event', 'calcolo_taglia', {
+          'event_category': 'interazione',
+          'event_label': 'Calcolo taglia avviato',
+          'value': 1
+        });
+      });
+    }
+  });
+</script>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
