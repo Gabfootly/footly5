@@ -128,8 +128,36 @@
         <div class="note" id="note">
             ⚠️ Questo misuratore è pensato per utenti adulti (12+). Le taglie sono valide per attività sportive come running, trekking, trail.
         </div>
+        <div id="testimonials" style="margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+  <h3 style="text-align: center; color: #2c3e50;" id="testimonial-heading">📣 Chi ha già usato Footly dice:</h3>
+  <ul style="list-style: none; padding-left: 0; font-size: 0.95em; color: #333;" id="testimonial-list">
+    <li style="margin-bottom: 12px;" class="testimonial-it"><strong>Andrea (Milano):</strong> “Ho usato Footly per le scarpe da trail running: EU 43 preciso come sulla tabella Salomon. Ottimo!”</li>
+    <li style="margin-bottom: 12px;" class="testimonial-it"><strong>Laura (Roma):</strong> “Finalmente un modo semplice per capire la mia misura corretta. Ho evitato un reso!”</li>
+    <li class="testimonial-it"><strong>Marco (Bergamo):</strong> “Usato per comprare scarpe da trekking per mio figlio. Misure perfette al primo colpo.”</li>
+
+    <li style="margin-bottom: 12px; display: none;" class="testimonial-en"><strong>Andrea (Milan):</strong> “Used Footly for trail running shoes: EU 43 matched Salomon’s chart exactly. Awesome!”</li>
+    <li style="margin-bottom: 12px; display: none;" class="testimonial-en"><strong>Laura (Rome):</strong> “Finally a simple way to understand my correct size. I avoided a return!”</li>
+    <li style="display: none;" class="testimonial-en"><strong>Marco (Bergamo):</strong> “Used it to buy trekking shoes for my son. Perfect fit on the first try.”</li>
+  </ul>
+</div>
     </div>
  <script src="script.protetto.js"></script>
+    <script>
+document.getElementById("language").addEventListener("change", function () {
+  const lang = this.value;
+
+  // Cambia testimonianze
+  document.querySelectorAll(".testimonial-it").forEach(el => el.style.display = lang === "it" ? "list-item" : "none");
+  document.querySelectorAll(".testimonial-en").forEach(el => el.style.display = lang === "en" ? "list-item" : "none");
+  document.getElementById("testimonial-heading").textContent =
+    lang === "en" ? "📣 What Footly users are saying:" : "📣 Chi ha già usato Footly dice:";
+
+  // Cambia messaggio privacy
+  document.getElementById("footly-privacy").textContent = lang === "en"
+    ? "✅ Footly is free, does not collect data, and requires no registration."
+    : "✅ Footly è gratuito, non raccoglie dati, e non richiede registrazione.";
+});
+</script>
     
 <div style="width: 100%; display: flex; flex-direction: column; align-items: center; margin-top: 30px;">
   <p style="font-size: 0.9em; color: #666;">Visitatori totali:</p>
