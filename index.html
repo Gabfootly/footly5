@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R95ZFRPRPZ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-R95ZFRPRPZ');
 </script>
+
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const button = document.getElementById("calculate-button");
@@ -25,191 +25,213 @@
     }
   });
 </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Footly - Calcolatore Taglie</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            padding: 2em;
-            border-radius: 10px;
-            box-shadow: 0 0 10px #ccc;
-            margin-top: 30px;
-        }
-        h1, h2, h3, h4 {
-            text-align: center;
-            color: #2c3e50;
-        }
-        label, select, input {
-            display: block;
-            width: 100%;
-            margin-bottom: 1em;
-            font-size: 1em;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            background: #27ae60;
-            color: white;
-            font-size: 1.2em;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #219150;
-        }
-        #result {
-            margin-top: 20px;
-            font-size: 1.1em;
-            font-weight: bold;
-            text-align: center;
-        }
-        .note {
-            font-size: 0.9em;
-            color: #777;
-            text-align: center;
-            margin-top: 20px;
-        }
-    </style>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Footly – Misuratore taglie per ecommerce di scarpe</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+  margin-top: 30px;
+}
+h1,h2,h3 {
+  text-align: center;
+  color: #2c3e50;
+}
+p {
+  color:#333;
+  line-height:1.4em;
+}
+.hero p {
+  text-align:center;
+}
+.logo {
+  max-width: 240px;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+.btn {
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:bold;
+  cursor:pointer;
+}
+.btn-primary {
+  background:#27ae60;
+  color:white;
+}
+.btn-secondary {
+  background:white;
+  border:1px solid #ccc;
+  color:#2c3e50;
+}
+.cta-row {
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:12px;
+}
+.section {
+  margin-top:30px;
+}
+.bullets {
+  list-style:none;
+  padding:0;
+}
+.bullets li {
+  margin:8px 0;
+}
+.cards {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.card {
+  border:1px solid #e6e6e6;
+  border-radius:10px;
+  padding:14px;
+  text-align:center;
+}
+.price {
+  font-size:1.4em;
+  font-weight:bold;
+}
+label, select, input {
+  display:block;
+  width:100%;
+  margin-bottom:1em;
+}
+button {
+  width:100%;
+  padding:10px;
+  background:#27ae60;
+  color:white;
+  font-size:1.1em;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+}
+button:hover {
+  background:#219150;
+}
+#result {
+  margin-top:20px;
+  font-weight:bold;
+  text-align:center;
+}
+.small {
+  font-size:0.9em;
+  color:#666;
+  text-align:center;
+}
+</style>
 </head>
+
 <body>
-    <div class="container">
-<img src="logo footly.png" alt="Footly Logo" class="logo" style="max-width: 250px; display: block; margin: 0 auto;" />
-        <div>
-            <label for="language">Lingua / Language:</label>
-            <select id="language" onchange="changeLanguage()">
-                <option value="it">Italiano</option>
-                <option value="en">English</option>
-            </select>
-        </div>
+<div class="container">
 
-        <h1 id="title">Misuratore per scarpe sportive</h1>
-        <p id="description">
-            Ciao! Questo è un calcolatore per farti trovare la taglia corretta della scarpa per tutte le tue attività sportive come running, trail running, nordic walking e trekking! Va bene anche per le scarpe da Basket, Volley e Tennis!
-        </p>
+<img src="logo footly.png" class="logo" alt="Footly logo"/>
 
-        <h2 id="how-to-use-heading">Come utilizzare il calcolatore:</h2>
-        <p id="instructions-1">Per essere certi di scegliere la taglia corretta della scarpa da acquistare, verifica che almeno due dei tre valori forniti dal calcolatore (EU, UK, US) coincidano con quelli indicati dal marchio della scarpa. Esempio: se devi acquistare una Nike e il risultato che esce dal tuo calcolo è EU 42, UK 8, US 8.5, devi avere almeno due di queste tre taglie che corrispondono!</p>
-
-        <h3 id="how-it-works-heading">Come funziona?</h3>
-        <p id="instructions-2">Molto semplice! Prendi un foglio grande più del tuo piede, metti il tuo piede sopra il foglio. Ora disegna la sagoma del tuo piede e con un righello o un metro misura la distanza maggiore dal tallone al tuo dito più lungo. Fai la stessa cosa misurando la distanza tra l'inizio del primo e il quinto metatarso. Ora inserisci le misure che hai ottenuto di lunghezza e larghezza.</p>
-        <img src="https://raw.githubusercontent.com/Gabfootly/footly5/main/example.png" alt="Misurazione lunghezza piede" style="max-width: 100%; display: block; margin: 20px auto; border-radius: 8px;" />        
-        <h4 id="important-heading">IMPORTANTE!</h4>
-        <p id="instructions-3">Devi misurare entrambi i piedi! Solitamente uno dei due è più lungo. Devi inserire la lunghezza e la larghezza del piede più lungo!</p>
-
-        <label for="gender" id="gender-label">Sesso:</label>
-        <select id="gender">
-            <option value="male" id="male-option">Uomo</option>
-            <option value="female" id="female-option">Donna</option>
-        </select>
-
-        <label for="foot-length" id="foot-length-label">Lunghezza piede (cm):</label>
-        <input type="number" id="foot-length" min="20" max="32" step="0.1"/>
-
-        <label for="foot-width" id="foot-width-label">Larghezza piede (cm):</label>
-        <input type="number" id="foot-width" min="7" max="14" step="0.1"/>
-
-        <button onclick="calcolaTaglia()" id="calculate-button">Calcola Taglia</button>
-
-        <div id="footly-privacy" style="text-align: center; font-size: 0.9em; color: #555; margin-top: 10px;">
-  <span class="privacy-it">✅ Footly è gratuito, non raccoglie dati, e non richiede registrazione.</span>
-  <span class="privacy-en" style="display: none;">✅ Footly is free, does not collect data, and requires no registration.</span>
+<div>
+<label>Lingua / Language</label>
+<select id="language">
+<option value="it">Italiano</option>
+<option value="en">English</option>
+</select>
 </div>
 
-        <div id="result"></div>
+<!-- HOME -->
+<div class="hero">
+<h1>Fai scegliere la taglia giusta delle scarpe online.</h1>
+<p>
+Footly è un misuratore di piedi per <strong>ecommerce di scarpe sportive</strong>.
+Aiuta i clienti a scegliere la taglia corretta, riducendo errori e resi.
+</p>
 
-        <div class="note" id="note">
-            ⚠️ Questo misuratore è pensato per utenti adulti (12+). Le taglie sono valide per attività sportive come running, trekking, trail.
-        </div>
-        <div id="suggested-products" style="margin-top: 30px; text-align: center;">
-  <h3 style="color: #2c3e50;">🎯 Advice / Qualche consiglio (Amazon)</h3>
-
-  <div style="
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    max-width: 500px;
-    margin: 20px auto 0 auto;
-  ">
-    <a href="https://amzn.to/3GLPgDZ" target="_blank" style="text-decoration: none; color: inherit;">
-      <img src="https://m.media-amazon.com/images/I/81SaUXS2qSL._AC_SY300_.jpg" alt="Salomon XA Pro 3D GTX" style="width: 100%; height: 100px; object-fit: contain; border-radius: 8px; background: #fff;" />
-      <p style="margin-top: 8px;">Salomon XA Pro 3D GTX</p>
-    </a>
-
-    <a href="https://amzn.to/4m9Nz2g" target="_blank" style="text-decoration: none; color: inherit;">
-      <img src="https://m.media-amazon.com/images/I/61MaW6lziPL._AC_SY300_.jpg" alt="Asics Gel-Nimbus 27" style="width: 100%; height: 100px; object-fit: contain; border-radius: 8px; background: #fff;" />
-      <p style="margin-top: 8px;">Asics Gel-Nimbus 27</p>
-    </a>
-
-    <a href="https://amzn.to/4o7tSdd" target="_blank" style="text-decoration: none; color: inherit;">
-      <img src="https://m.media-amazon.com/images/I/81ftC+xHwuL._AC_SY300_.jpg" alt="Brooks Glycerin GTS 22" style="width: 100%; height: 100px; object-fit: contain; border-radius: 8px; background: #fff;" />
-      <p style="margin-top: 8px;">Brooks Glycerin GTS 22</p>
-    </a>
-
-    <a href="https://amzn.to/3GPRUbS" target="_blank" style="text-decoration: none; color: inherit;">
-      <img src="https://m.media-amazon.com/images/I/71gA+rHrU3L._AC_SY300_.jpg" alt="Adidas Terrex Swift R2 GTX" style="width: 100%; height: 100px; object-fit: contain; border-radius: 8px; background: #fff;" />
-      <p style="margin-top: 8px;">Adidas Terrex Swift R2 GTX</p>
-    </a>
-  </div>
+<div class="cta-row">
+<a class="btn btn-primary" href="#demo">Guarda la demo</a>
+<a class="btn btn-secondary" href="mailto:info@footly.fit">Contattaci</a>
 </div>
-        <div id="testimonials" style="margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
-  <h3 style="text-align: center; color: #2c3e50;" id="testimonial-heading">📣 Chi ha già usato Footly dice:</h3>
-  <ul style="list-style: none; padding-left: 0; font-size: 0.95em; color: #333;" id="testimonial-list">
-    <!-- Italiano -->
-    <li style="margin-bottom: 12px;" class="testimonial-it"><strong>Andrew (Londra):</strong> “Ho usato Footly per le scarpe da running: EU 43, US 9.5  del modello Fresh Foam X 1080 v14. Preciso come sulla tabella New Balance. Ottimo!”</li>
-    <li style="margin-bottom: 12px;" class="testimonial-it"><strong>Laura (Roma):</strong> “Finalmente un modo semplice per capire la mia misura corretta. Ho evitato un reso!”</li>
-    <li style="margin-bottom: 12px;" class="testimonial-it"><strong>Nancy (New York):</strong> “Incredibile! Avevo voglia di comprare le Salomon XT6 così difficili da trovare in negozio! Le ho prese on-line grazie a Footly. Taglia EU 39 1/3 e UK 6. Perfette!”</li>
-    <li class="testimonial-it"><strong>Marco (Bergamo):</strong> “Usato per comprare scarpe da trekking che non trovavo in negozio fisico. Misure perfette al primo colpo.”</li>
 
-    <!-- Inglese -->
-    <li style="margin-bottom: 12px; display: none;" class="testimonial-en"><strong>Andrew (London):</strong> “Used Footly for trail running shoes: EU 43, US 9.5 for Fresh Foam X 1080 v14 model. Matched New Balance’s chart exactly. Awesome!”</li>
-    <li style="margin-bottom: 12px; display: none;" class="testimonial-en"><strong>Laura (Rome):</strong> “Finally a simple way to understand my correct size. I avoided a return!”</li>
-    <li style="margin-bottom: 12px; display: none;" class="testimonial-en"><strong>Nancy (New York):</strong> “Amazing! I wanted to buy the Salomon XT6 so hard to find in store! I got them online thanks to Footly. Size EU 39 1/3 and UK 6. Perfect!”</li>
-    <li style="display: none;" class="testimonial-en"><strong>Marco (Bergamo):</strong> “Used it to buy trekking shoes that I couldn’t find in the physical store. Perfect fit on the first try.”</li>
-  </ul>
+<p class="small">Vuoi integrare Footly nel tuo ecommerce? Scrivici.</p>
 </div>
-    </div>
-    
- <script src="script.protetto.js"></script>
-    <script>
+
+<!-- PERCHÉ -->
+<div class="section">
+<h2>Perché Footly aiuta a vendere meglio</h2>
+<ul class="bullets">
+<li>❌ Taglie sbagliate = resi costosi</li>
+<li>❌ Clienti indecisi = carrelli abbandonati</li>
+<li>❌ Cambi continui = tempo perso</li>
+</ul>
+</div>
+
+<!-- PREZZI -->
+<div class="section">
+<h2>Prezzi semplici</h2>
+<div class="cards">
+<div class="card">
+<strong>Ecommerce piccoli</strong>
+<div class="price">29 € / mese</div>
+</div>
+<div class="card">
+<strong>Ecommerce strutturati</strong>
+<div class="price">49 € / mese</div>
+</div>
+</div>
+</div>
+
+<!-- DEMO -->
+<div class="section" id="demo">
+<h2>Demo Footly</h2>
+<p class="small">Versione demo del misuratore integrabile negli ecommerce.</p>
+
+<label>Sesso</label>
+<select id="gender">
+<option value="male">Uomo</option>
+<option value="female">Donna</option>
+</select>
+
+<label>Lunghezza piede (cm)</label>
+<input type="number" id="foot-length" min="20" max="32" step="0.1"/>
+
+<label>Larghezza piede (cm)</label>
+<input type="number" id="foot-width" min="7" max="14" step="0.1"/>
+
+<button id="calculate-button" onclick="calcolaTaglia()">Calcola taglia</button>
+<div id="result"></div>
+
+<p class="small">Demo gratuita – nessun dato raccolto</p>
+</div>
+
+<footer class="small" style="margin-top:30px;">
+© 2025 Footly – <a href="mailto:info@footly.fit">info@footly.fit</a>
+</footer>
+
+</div>
+
+<script src="script.protetto.js"></script>
+
+<script>
 document.getElementById("language").addEventListener("change", function () {
   const lang = this.value;
-
-  // Cambia testimonianze
-  document.querySelectorAll(".testimonial-it").forEach(el => el.style.display = lang === "it" ? "list-item" : "none");
-  document.querySelectorAll(".testimonial-en").forEach(el => el.style.display = lang === "en" ? "list-item" : "none");
-  document.getElementById("testimonial-heading").textContent =
-    lang === "en" ? "📣 What Footly users are saying:" : "📣 Chi ha già usato Footly dice:";
-
-  // Cambia messaggio privacy
-  document.getElementById("footly-privacy").textContent = lang === "en"
-    ? "✅ Footly is free, does not collect data, and requires no registration."
-    : "✅ Footly è gratuito, non raccoglie dati, e non richiede registrazione.";
 });
 </script>
-    
-<div style="width: 100%; display: flex; flex-direction: column; align-items: center; margin-top: 30px;">
-  <p style="font-size: 0.9em; color: #666;">Visitatori totali:</p>
-  <a href="https://www.hitwebcounter.com" target="_blank">
-    <img src="https://hitwebcounter.com/counter/counter.php?page=11417771&style=0006&nbdigits=5&type=page&initCount=0"
-    title="Visitatori totali" Alt="Contatore Visite" style="display: block;" />
-  </a>
-</div>
-    
-         <footer style="text-align: center; font-size: 0.8em; color: #666; margin-top: 40px;">
-      © 2025 – Tutti i diritti riservati. <br/>
-      Il progetto “Footly” è protetto dalla legge sul diritto d’autore. <br/>
-      Per licenze o collaborazioni: <a href="mailto:info@footly.fit">info@footly.fit</a>
-    </footer>
+
 </body>
 </html>
-
