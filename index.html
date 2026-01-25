@@ -12,23 +12,23 @@
 </script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const button = document.getElementById("calculate-button");
-    if (button) {
-      button.addEventListener("click", function () {
-        gtag('event', 'calcolo_taglia', {
-          'event_category': 'interazione',
-          'event_label': 'Calcolo taglia avviato',
-          'value': 1
-        });
+document.addEventListener('DOMContentLoaded', function () {
+  const button = document.getElementById("calculate-button");
+  if (button) {
+    button.addEventListener("click", function () {
+      gtag('event', 'calcolo_taglia', {
+        'event_category': 'interazione',
+        'event_label': 'Calcolo taglia avviato',
+        'value': 1
       });
-    }
-  });
+    });
+  }
+});
 </script>
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Footly – Misuratore taglie per ecommerce di scarpe</title>
+<title>Footly – Shoe Size Calculator for Ecommerce</title>
 
 <style>
 body {
@@ -54,9 +54,6 @@ p {
   color:#333;
   line-height:1.4em;
 }
-.hero p {
-  text-align:center;
-}
 .logo {
   max-width: 240px;
   display: block;
@@ -68,7 +65,6 @@ p {
   border-radius:6px;
   text-decoration:none;
   font-weight:bold;
-  cursor:pointer;
 }
 .btn-primary {
   background:#27ae60;
@@ -147,80 +143,76 @@ button:hover {
 
 <img src="logo footly.png" class="logo" alt="Footly logo"/>
 
-<div>
 <label>Lingua / Language</label>
 <select id="language">
-<option value="it">Italiano</option>
-<option value="en">English</option>
+  <option value="it">Italiano</option>
+  <option value="en">English</option>
 </select>
-</div>
 
-<!-- HOME -->
-<div class="hero">
-<h1>Fai scegliere la taglia giusta delle scarpe online.</h1>
-<p>
+<!-- HERO -->
+<h1 id="hero-title">Fai scegliere la taglia giusta delle scarpe online.</h1>
+<p id="hero-sub" style="text-align:center;">
 Footly è un misuratore di piedi per <strong>ecommerce di scarpe sportive</strong>.
 Aiuta i clienti a scegliere la taglia corretta, riducendo errori e resi.
 </p>
 
 <div class="cta-row">
-<a class="btn btn-primary" href="#demo">Guarda la demo</a>
-<a class="btn btn-secondary" href="mailto:info@footly.fit">Contattaci</a>
+  <a class="btn btn-primary" href="#demo" id="btn-demo">Guarda la demo</a>
+  <a class="btn btn-secondary" href="mailto:info@footly.fit" id="btn-contact">Contattaci</a>
 </div>
 
-<p class="small">Vuoi integrare Footly nel tuo ecommerce? Scrivici.</p>
-</div>
+<p class="small" id="hero-small">Vuoi integrare Footly nel tuo ecommerce? Scrivici.</p>
 
-<!-- PERCHÉ -->
+<!-- WHY -->
 <div class="section">
-<h2>Perché Footly aiuta a vendere meglio</h2>
+<h2 id="why-title">Perché Footly aiuta a vendere meglio</h2>
 <ul class="bullets">
-<li>❌ Taglie sbagliate = resi costosi</li>
-<li>❌ Clienti indecisi = carrelli abbandonati</li>
-<li>❌ Cambi continui = tempo perso</li>
+  <li id="why-1">❌ Taglie sbagliate = resi costosi</li>
+  <li id="why-2">❌ Clienti indecisi = carrelli abbandonati</li>
+  <li id="why-3">❌ Cambi continui = tempo perso</li>
 </ul>
 </div>
 
-<!-- PREZZI -->
+<!-- PRICES -->
 <div class="section">
-<h2>Prezzi semplici</h2>
+<h2 id="prices-title">Prezzi semplici</h2>
 <div class="cards">
-<div class="card">
-<strong>Ecommerce piccoli</strong>
-<div class="price">29 € / mese</div>
-</div>
-<div class="card">
-<strong>Ecommerce strutturati</strong>
-<div class="price">49 € / mese</div>
-</div>
+  <div class="card">
+    <strong id="plan-small">Ecommerce piccoli</strong>
+    <div class="price">29 € / mese</div>
+  </div>
+  <div class="card">
+    <strong id="plan-pro">Ecommerce strutturati</strong>
+    <div class="price">49 € / mese</div>
+  </div>
 </div>
 </div>
 
 <!-- DEMO -->
 <div class="section" id="demo">
-<h2>Demo Footly</h2>
-<p class="small">Versione demo del misuratore integrabile negli ecommerce.</p>
+<h2 id="demo-title">Demo Footly</h2>
+<p class="small" id="demo-sub">Versione demo del misuratore integrabile negli ecommerce.</p>
 
-<label>Sesso</label>
+<label id="lbl-gender">Sesso</label>
 <select id="gender">
-<option value="male">Uomo</option>
-<option value="female">Donna</option>
+  <option value="male">Uomo</option>
+  <option value="female">Donna</option>
 </select>
 
-<label>Lunghezza piede (cm)</label>
+<label id="lbl-length">Lunghezza piede (cm)</label>
 <input type="number" id="foot-length" min="20" max="32" step="0.1"/>
 
-<label>Larghezza piede (cm)</label>
+<label id="lbl-width">Larghezza piede (cm)</label>
 <input type="number" id="foot-width" min="7" max="14" step="0.1"/>
 
-<button id="calculate-button" onclick="calcolaTaglia()">Calcola taglia</button>
+<button id="calculate-button">Calcola taglia</button>
 <div id="result"></div>
 
-<p class="small">Demo gratuita – nessun dato raccolto</p>
+<p class="small" id="demo-note">Demo gratuita – nessun dato raccolto</p>
 </div>
 
 <footer class="small" style="margin-top:30px;">
-© 2025 Footly – <a href="mailto:info@footly.fit">info@footly.fit</a>
+<span id="footer-text">© 2025 Footly – info@footly.fit</span>
 </footer>
 
 </div>
@@ -228,8 +220,83 @@ Aiuta i clienti a scegliere la taglia corretta, riducendo errori e resi.
 <script src="script.protetto.js"></script>
 
 <script>
-document.getElementById("language").addEventListener("change", function () {
-  const lang = this.value;
+const T = {
+  it: {
+    heroTitle: "Fai scegliere la taglia giusta delle scarpe online.",
+    heroSub: "Footly è un misuratore di piedi per ecommerce di scarpe sportive. Aiuta i clienti a scegliere la taglia corretta, riducendo errori e resi.",
+    heroSmall: "Vuoi integrare Footly nel tuo ecommerce? Scrivici.",
+    whyTitle: "Perché Footly aiuta a vendere meglio",
+    why1: "❌ Taglie sbagliate = resi costosi",
+    why2: "❌ Clienti indecisi = carrelli abbandonati",
+    why3: "❌ Cambi continui = tempo perso",
+    pricesTitle: "Prezzi semplici",
+    planSmall: "Ecommerce piccoli",
+    planPro: "Ecommerce strutturati",
+    demoTitle: "Demo Footly",
+    demoSub: "Versione demo del misuratore integrabile negli ecommerce.",
+    lblGender: "Sesso",
+    lblLength: "Lunghezza piede (cm)",
+    lblWidth: "Larghezza piede (cm)",
+    btnCalc: "Calcola taglia",
+    demoNote: "Demo gratuita – nessun dato raccolto",
+    footer: "© 2025 Footly – info@footly.fit",
+    btnDemo: "Guarda la demo",
+    btnContact: "Contattaci"
+  },
+  en: {
+    heroTitle: "Help customers choose the right shoe size online.",
+    heroSub: "Footly is a foot measurement tool for sports shoe ecommerce. It helps customers choose the right size, reducing mistakes and returns.",
+    heroSmall: "Want to add Footly to your ecommerce? Contact us.",
+    whyTitle: "Why Footly helps you sell better",
+    why1: "❌ Wrong sizes = costly returns",
+    why2: "❌ Uncertain customers = abandoned carts",
+    why3: "❌ Frequent exchanges = wasted time",
+    pricesTitle: "Simple pricing",
+    planSmall: "Small ecommerce",
+    planPro: "Growing ecommerce",
+    demoTitle: "Footly Demo",
+    demoSub: "Demo version of the tool that can be embedded into ecommerce product pages.",
+    lblGender: "Gender",
+    lblLength: "Foot length (cm)",
+    lblWidth: "Foot width (cm)",
+    btnCalc: "Calculate size",
+    demoNote: "Free demo – no data collected",
+    footer: "© 2025 Footly – info@footly.fit",
+    btnDemo: "View demo",
+    btnContact: "Contact us"
+  }
+};
+
+function set(id, val){ const el=document.getElementById(id); if(el) el.textContent=val; }
+
+function applyLang(lang){
+  const d=T[lang];
+  set("hero-title", d.heroTitle);
+  set("hero-sub", d.heroSub);
+  set("hero-small", d.heroSmall);
+  set("why-title", d.whyTitle);
+  set("why-1", d.why1);
+  set("why-2", d.why2);
+  set("why-3", d.why3);
+  set("prices-title", d.pricesTitle);
+  set("plan-small", d.planSmall);
+  set("plan-pro", d.planPro);
+  set("demo-title", d.demoTitle);
+  set("demo-sub", d.demoSub);
+  set("lbl-gender", d.lblGender);
+  set("lbl-length", d.lblLength);
+  set("lbl-width", d.lblWidth);
+  set("calculate-button", d.btnCalc);
+  set("demo-note", d.demoNote);
+  set("footer-text", d.footer);
+  set("btn-demo", d.btnDemo);
+  set("btn-contact", d.btnContact);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sel=document.getElementById("language");
+  applyLang(sel.value);
+  sel.addEventListener("change", ()=>applyLang(sel.value));
 });
 </script>
 
