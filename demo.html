@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Footly Demo - Calcola la tua taglia</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f5f5f5; margin:0; padding:0; }
+    .container { max-width: 700px; margin: 20px auto; background:#fff; padding: 18px; border-radius: 10px; box-shadow: 0 0 10px #ccc; }
+    h1,h2,h3 { text-align:center; color:#2c3e50; }
+    .muted { color:#666; font-size:0.95em; text-align:center; }
+    .media { margin: 16px 0; }
+    video, iframe, img { width:100%; border-radius: 10px; }
+    .box { background:#f9f9f9; padding:14px; border-radius:10px; margin-top:16px; }
+    .cta { text-align:center; margin: 14px 0 0; font-size: 0.95em; color:#555; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="logo footly.png" alt="Footly" style="max-width:220px; display:block; margin: 0 auto 10px;" />
+
+    <h1>Calcola la tua taglia in 1 minuto</h1>
+    <p class="muted">Guarda il video (30 secondi), poi usa il misuratore qui sotto.</p>
+
+    <!-- VIDEO (consiglio: mp4) -->
+    <div class="media">
+      <video controls playsinline preload="metadata">
+        <source src="VIDEO_URL" type="video/mp4">
+        Il tuo browser non supporta il video.
+      </video>
+    </div>
+
+    <!-- IMMAGINE STATICA -->
+    <div class="media">
+      <h3>Come prendere le misure</h3>
+      <img src="example.png" alt="Come misurare il piede" />
+      <p class="cta">Misura entrambi i piedi e inserisci la misura del più lungo.</p>
+    </div>
+
+    <div class="box">
+      <h2>Prova ora il misuratore</h2>
+
+      <!-- QUI puoi incollare il TUO BLOCCO del misuratore -->
+      <!-- Opzione A (migliore): copia/incolla direttamente dal tuo index.html -->
+      <!-- Opzione B (rapida): se preferisci, possiamo includere uno script condiviso. -->
+    </div>
+
+    <p class="muted" style="margin-top:16px;">
+      ✅ Footly non raccoglie dati e non richiede registrazione.
+    </p>
+  </div>
+</body>
+</html>
