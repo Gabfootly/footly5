@@ -9,5 +9,5 @@ L’utente inserisce le misure del proprio piede e il genere. Il calcolatore sug
 🧑‍💻 Creato da **Gabriele Sanzi**
 
 ## Licenza
-📄 Tutti i diritti riservati © 2025 – Gabriele Sanzi.  
+📄 Tutti i diritti riservati © 2026 – Gabriele Sanzi.  
 Consulta `LICENSE.txt` per i dettagli legali.
