@@ -21,11 +21,14 @@ button:hover { background:#219150; }
 
 /* Fix per sfondo nero su mobile e centratura immagini */
 img { 
+  img { 
   max-width: 100%;
   border-radius: 10px;
   margin: 20px auto;
-  background-color: white; /* Risolve il problema dello sfondo nero */
+  background-color: #ffffff !important; /* Forza il bianco assoluto */
   display: block; 
+  filter: none !important; /* Impedisce al browser di invertire i colori dell'immagine */
+}
 }
 
 /* Stile per il selettore lingua */
