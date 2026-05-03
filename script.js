@@ -1,8 +1,8 @@
-/* FOOTLY - Motore di calcolo Definitivo 2026
+/* FOOTLY - Motore di calcolo B2B 2026
    Proprietà di Gabriele Sanzi
+   Logica: Demo con Range Limitato (24-26cm) e Redirect Strategico
 */
 
-// --- DATI REALI (UOMO/DONNA) ---
 const dataUomo = [
   {Tipo_piede: "Normale/stretto", MinLunghezza: 22.8, MaxLunghezza: 23.3, MinLarghezza: 8.7, MaxLarghezza: 9.5, EU: 38, UK: 5.0, US: 5.5},
   {Tipo_piede: "Piede largo", MinLunghezza: 22.8, MaxLunghezza: 23.3, MinLarghezza: 9.55, MaxLarghezza: 10.2, EU: "39 (39 1/3)", UK: 6.0, US: 6.5},
@@ -104,27 +104,30 @@ function calcolaTaglia() {
         return;
     }
 
-    // LOGICA DEMO (Landing Page)
+    // --- LOGICA DEMO LIMITATA (Landing Page) ---
     if (isLanding) {
-        // Limitiamo il calcolo demo al range 24-26 cm
+        // Range attivo per mostrare il funzionamento (24cm - 26cm)
         if (lunghezza < 24 || lunghezza > 26) {
             const demoMsg = lang === "en" 
-                ? "<strong>DEMO LIMIT:</strong> To see the algorithm in action on all sizes, visit the live store:" 
-                : "<strong>LIMITE DEMO:</strong> Per vedere l'algoritmo in azione su tutte le taglie, visita lo store attivo:";
+                ? "<strong>DEMO LIMIT:</strong> To test the algorithm on all sizes, check the live integration on this store:" 
+                : "<strong>LIMITE DEMO:</strong> Per testare l'algoritmo completo su ogni taglia, guarda l'integrazione live qui:";
             
+            const btnText = lang === "en" ? "VIEW LIVE ON STORE" : "VEDI LIVE SULLO STORE";
+
             risultato.innerHTML = `
-                <div style="border:2px dashed #e67e22; padding:15px; border-radius:10px; background:#fff9f4;">
-                    <p style="margin:0; font-size:0.85em; color:#d35400;">${demoMsg}</p>
-                    <a href="https://www.bfoutdoorshop.com" target="_blank" style="display:inline-block; margin-top:10px; color:#27ae60; font-weight:bold; text-decoration:underline;">
-                        www.bfoutdoorshop.com
+                <div style="border:2px dashed #e67e22; padding:15px; border-radius:10px; background:#fff9f4; text-align:center;">
+                    <p style="margin:0 0 12px 0; font-size:0.85em; color:#d35400; line-height:1.4;">${demoMsg}</p>
+                    <a href="https://bfoutdoorshop.com/products/ultraventure-4-w?variant=51507061490006" 
+                       target="_blank" 
+                       style="display:inline-block; background:#27ae60; color:white; padding:10px 18px; border-radius:5px; text-decoration:none; font-weight:bold; font-size:0.8em; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        ${btnText}
                     </a>
                 </div>`;
             return;
         }
-        // Se è nel range, esegue il calcolo reale ma aggiunge il disclaimer
     }
 
-    // CALCOLO REALE (Usato sia in consumer.html che nella demo "limitata")
+    // --- CALCOLO REALE ---
     const dati = genere === "male" ? dataUomo : dataDonna;
     let opzioni = dati.filter(d => lunghezza >= d.MinLunghezza && lunghezza <= d.MaxLunghezza);
 
@@ -153,24 +156,24 @@ function calcolaTaglia() {
     const tagliaConsigliata = lang === "en" ? "Recommended size:" : "Taglia consigliata:";
     const tipoPiedeTesto = lang === "en" ? "Foot type:" : "Tipo piede:";
     
-    // Costruiamo il box del risultato
     let htmlResult = `
         <div style="border:2px solid #27ae60; padding:15px; border-radius:10px; background:#f4fff8;">
             <p style="margin:0; font-size:0.9em; color:#555;">${tagliaConsigliata}</p>
-            <strong style="font-size:1.6em; color:#27ae60;">EU ${match.EU}</strong><br>
-            <span style="color:#333;">UK ${match.UK} | US ${match.US}</span>
+            <strong style="font-size:1.8em; color:#27ae60;">EU ${match.EU}</strong><br>
+            <span style="color:#333; font-weight:bold;">UK ${match.UK} | US ${match.US}</span>
             <hr style="border:0; border-top:1px solid #c8e6d1; margin:10px 0;">
             <p style="margin:0; font-size:0.9em;">${tipoPiedeTesto} <strong>${notaPiede}</strong></p>
     `;
 
-    // Se siamo nella landing, aggiungiamo il disclaimer in piccolo sotto
+    // Disclaimer sotto il risultato per la Landing Page
     if (isLanding) {
-        const disclaimer = lang === "en" 
-            ? "Calculation calibrated on standard sample. <br>See it in action on: <a href='https://www.bfoutdoorshop.com' target='_blank' style='color:#27ae60;'>BF Outdoor Shop</a>" 
-            : "Calcolo calibrato su campione standard. <br>Scoprilo dal vivo su: <a href='https://www.bfoutdoorshop.com' target='_blank' style='color:#27ae60;'>BF Outdoor Shop</a>";
+        const promoText = lang === "en" 
+            ? "This is the result if 25.7 cm length and 10 cm width are entered. <br>See it live on: <a href='https://bfoutdoorshop.com/products/ultraventure-4-w?variant=51507061490006' target='_blank' style='color:#27ae60; font-weight:bold;'>BF Outdoor Shop</a>" 
+            : "Questo è il risultato se inserisci 25.7 cm di lunghezza e 10 cm di larghezza. <br>Vedi l'integrazione su: <a href='https://bfoutdoorshop.com/products/ultraventure-4-w?variant=51507061490006' target='_blank' style='color:#27ae60; font-weight:bold;'>BF Outdoor Shop</a>";
+        
         htmlResult += `
-            <p style="margin-top:10px; font-size:0.75em; color:#888; border-top: 1px dashed #ccc; pt-10px;">
-                ${disclaimer}
+            <p style="margin-top:12px; font-size:0.75em; color:#666; border-top: 1px dashed #ccc; padding-top:8px; line-height:1.4;">
+                ${promoText}
             </p>`;
     }
 
