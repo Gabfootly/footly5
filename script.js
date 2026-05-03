@@ -75,7 +75,7 @@ const dataDonna = [
   {Tipo_piede: "Piede Molto largo", MinLunghezza: 25.1, MaxLunghezza: 25.4, MinLarghezza: 10.9, MaxLarghezza: 11.0, EU: "42 1/2 ( 42 2/3)", UK: 8.5, US: 10.0},
   {Tipo_piede: "Normale/stretto", MinLunghezza: 25.5, MaxLunghezza: 25.8, MinLarghezza: 9.55, MaxLarghezza: 10.7, EU: 42, UK: 8.0, US: 9.5},
   {Tipo_piede: "Piede largo", MinLunghezza: 25.5, MaxLunghezza: 25.8, MinLarghezza: 10.8, MaxLarghezza: 11.0, EU: "42 1/2 ( 42 2/3)", UK: 8.5, US: 10.0},
-  {Tipo_piede: "Normale/stretto", MinLunghezza: 25.9, MaxLunghezza: 26.3, MinLarghezza: 9.7, MaxLarghezza: 10.88, EU: "42  1/2 ( 42 2/3)", UK: 8.5, US: 10.0},
+  {Tipo_piede: "Normale/stretto", MinLunghezza: 25.9, MaxLunghezza: 26.3, MinLarghezza: 9.7, MaxLarghezza: 10.88, EU: "42 1/2 ( 42 2/3)", UK: 8.5, US: 10.0},
   {Tipo_piede: "Piede largo", MinLunghezza: 25.9, MaxLunghezza: 26.3, MinLarghezza: 10.9, MaxLarghezza: 11.1, EU: 43, UK: 9.0, US: 10.5},
   {Tipo_piede: "Piede Molto largo", MinLunghezza: 25.9, MaxLunghezza: 26.3, MinLarghezza: 11.1, MaxLarghezza: 11.2, EU: 44, UK: 9.5, US: 11.0},
   {Tipo_piede: "Normale/stretto", MinLunghezza: 26.4, MaxLunghezza: 26.7, MinLarghezza: 9.88, MaxLarghezza: 10.9, EU: "43 ( 43 1/3)", UK: 9.0, US: 10.5},
@@ -96,11 +96,35 @@ function calcolaTaglia() {
     const lang = document.getElementById("language") ? document.getElementById("language").value : "it";
     const risultato = document.getElementById("result");
 
+    // Controllo se siamo nella Landing Page (Demo)
+    const isLanding = document.getElementById("demo-section") !== null;
+
     if (isNaN(lunghezza) || isNaN(larghezza)) {
         risultato.innerHTML = lang === "en" ? "❗ Enter valid numbers." : "❗ Inserisci numeri validi.";
         return;
     }
 
+    // LOGICA LANDING PAGE (DEMO MODE)
+    if (isLanding) {
+        const demoTitle = lang === "en" ? "PREVIEW MODE" : "MODALITÀ ANTEPRIMA";
+        const resTitle = lang === "en" ? "Demo Result:" : "Risultato Demo:";
+        const unlockMsg = lang === "en" 
+            ? "The full version is calibrated on your brand's specific charts." 
+            : "La versione completa viene calibrata sulle tabelle specifiche del tuo brand.";
+
+        risultato.innerHTML = `
+            <div style="border:2px dashed #27ae60; padding:15px; border-radius:10px; background:#f4fff8;">
+                <p style="margin:0; font-size:0.75em; color:#e67e22; font-weight:bold;">${demoTitle}</p>
+                <p style="margin:0; font-size:0.9em; color:#555;">${resTitle}</p>
+                <strong style="font-size:1.6em; color:#27ae60;">EU 42</strong><br>
+                <span style="color:#333;">UK 8.0 | US 9.0</span>
+                <hr style="border:0; border-top:1px solid #c8e6d1; margin:10px 0;">
+                <p style="margin:0; font-size:0.8em; color:#666; line-height:1.2;">${unlockMsg}</p>
+            </div>`;
+        return; 
+    }
+
+    // LOGICA CONSUMER.HTML (CALCOLO REALE)
     const dati = genere === "male" ? dataUomo : dataDonna;
     let opzioni = dati.filter(d => lunghezza >= d.MinLunghezza && lunghezza <= d.MaxLunghezza);
 
@@ -121,11 +145,9 @@ function calcolaTaglia() {
             notaPiede = lang === "en" ? "Extra Wide Fit" : "Pianta extra larga";
         }
     } else {
-        if (lang === "en") {
-            notaPiede = match.Tipo_piede.replace("Normale/stretto", "Normal/Narrow").replace("Piede largo", "Wide Fit").replace("Piede Molto largo", "Extra Wide Fit");
-        } else {
-            notaPiede = match.Tipo_piede;
-        }
+        notaPiede = lang === "en" 
+            ? match.Tipo_piede.replace("Normale/stretto", "Normal/Narrow").replace("Piede largo", "Wide Fit").replace("Piede Molto largo", "Extra Wide Fit")
+            : match.Tipo_piede;
     }
 
     const tagliaConsigliata = lang === "en" ? "Recommended size:" : "Taglia consigliata:";
@@ -143,7 +165,6 @@ function calcolaTaglia() {
 
 function changeLanguage() {
     const lang = document.getElementById("language").value;
-    
     const t = {
         it: {
             "main-title": "Riduci i resi del tuo e-commerce",
@@ -196,13 +217,9 @@ function changeLanguage() {
             "btn-contact": "CONTACT US FOR A TRIAL"
         }
     };
-
     const sel = t[lang];
-
     for (let id in sel) {
         const el = document.getElementById(id);
-        if (el) {
-            el.innerText = sel[id];
-        }
+        if (el) { el.innerText = sel[id]; }
     }
 }
