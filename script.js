@@ -2,6 +2,7 @@
    Proprietà di Gabriele Sanzi
 */
 
+// --- DATI REALI (UOMO/DONNA) ---
 const dataUomo = [
   {Tipo_piede: "Normale/stretto", MinLunghezza: 22.8, MaxLunghezza: 23.3, MinLarghezza: 8.7, MaxLarghezza: 9.5, EU: 38, UK: 5.0, US: 5.5},
   {Tipo_piede: "Piede largo", MinLunghezza: 22.8, MaxLunghezza: 23.3, MinLarghezza: 9.55, MaxLarghezza: 10.2, EU: "39 (39 1/3)", UK: 6.0, US: 6.5},
@@ -75,7 +76,7 @@ const dataDonna = [
   {Tipo_piede: "Piede Molto largo", MinLunghezza: 25.1, MaxLunghezza: 25.4, MinLarghezza: 10.9, MaxLarghezza: 11.0, EU: "42 1/2 ( 42 2/3)", UK: 8.5, US: 10.0},
   {Tipo_piede: "Normale/stretto", MinLunghezza: 25.5, MaxLunghezza: 25.8, MinLarghezza: 9.55, MaxLarghezza: 10.7, EU: 42, UK: 8.0, US: 9.5},
   {Tipo_piede: "Piede largo", MinLunghezza: 25.5, MaxLunghezza: 25.8, MinLarghezza: 10.8, MaxLarghezza: 11.0, EU: "42 1/2 ( 42 2/3)", UK: 8.5, US: 10.0},
-  {Tipo_piede: "Normale/stretto", MinLunghezza: 25.9, MaxLunghezza: 26.3, MinLarghezza: 9.7, MaxLarghezza: 10.88, EU: "42 1/2 ( 42 2/3)", UK: 8.5, US: 10.0},
+  {Tipo_piede: "Normale/stretto", MinLunghezza: 25.9, MaxLunghezza: 26.3, MinLarghezza: 9.7, MaxLarghezza: 10.88, EU: "42  1/2 ( 42 2/3)", UK: 8.5, US: 10.0},
   {Tipo_piede: "Piede largo", MinLunghezza: 25.9, MaxLunghezza: 26.3, MinLarghezza: 10.9, MaxLarghezza: 11.1, EU: 43, UK: 9.0, US: 10.5},
   {Tipo_piede: "Piede Molto largo", MinLunghezza: 25.9, MaxLunghezza: 26.3, MinLarghezza: 11.1, MaxLarghezza: 11.2, EU: 44, UK: 9.5, US: 11.0},
   {Tipo_piede: "Normale/stretto", MinLunghezza: 26.4, MaxLunghezza: 26.7, MinLarghezza: 9.88, MaxLarghezza: 10.9, EU: "43 ( 43 1/3)", UK: 9.0, US: 10.5},
@@ -96,7 +97,6 @@ function calcolaTaglia() {
     const lang = document.getElementById("language") ? document.getElementById("language").value : "it";
     const risultato = document.getElementById("result");
 
-    // Controllo se siamo nella Landing Page (Demo)
     const isLanding = document.getElementById("demo-section") !== null;
 
     if (isNaN(lunghezza) || isNaN(larghezza)) {
@@ -104,27 +104,27 @@ function calcolaTaglia() {
         return;
     }
 
-    // LOGICA LANDING PAGE (DEMO MODE)
+    // LOGICA DEMO (Landing Page)
     if (isLanding) {
-        const demoTitle = lang === "en" ? "PREVIEW MODE" : "MODALITÀ ANTEPRIMA";
-        const resTitle = lang === "en" ? "Demo Result:" : "Risultato Demo:";
-        const unlockMsg = lang === "en" 
-            ? "The full version is calibrated on your brand's specific charts." 
-            : "La versione completa viene calibrata sulle tabelle specifiche del tuo brand.";
-
-        risultato.innerHTML = `
-            <div style="border:2px dashed #27ae60; padding:15px; border-radius:10px; background:#f4fff8;">
-                <p style="margin:0; font-size:0.75em; color:#e67e22; font-weight:bold;">${demoTitle}</p>
-                <p style="margin:0; font-size:0.9em; color:#555;">${resTitle}</p>
-                <strong style="font-size:1.6em; color:#27ae60;">EU 42</strong><br>
-                <span style="color:#333;">UK 8.0 | US 9.0</span>
-                <hr style="border:0; border-top:1px solid #c8e6d1; margin:10px 0;">
-                <p style="margin:0; font-size:0.8em; color:#666; line-height:1.2;">${unlockMsg}</p>
-            </div>`;
-        return; 
+        // Limitiamo il calcolo demo al range 24-26 cm
+        if (lunghezza < 24 || lunghezza > 26) {
+            const demoMsg = lang === "en" 
+                ? "<strong>DEMO LIMIT:</strong> To see the algorithm in action on all sizes, visit the live store:" 
+                : "<strong>LIMITE DEMO:</strong> Per vedere l'algoritmo in azione su tutte le taglie, visita lo store attivo:";
+            
+            risultato.innerHTML = `
+                <div style="border:2px dashed #e67e22; padding:15px; border-radius:10px; background:#fff9f4;">
+                    <p style="margin:0; font-size:0.85em; color:#d35400;">${demoMsg}</p>
+                    <a href="https://www.bfoutdoorshop.com" target="_blank" style="display:inline-block; margin-top:10px; color:#27ae60; font-weight:bold; text-decoration:underline;">
+                        www.bfoutdoorshop.com
+                    </a>
+                </div>`;
+            return;
+        }
+        // Se è nel range, esegue il calcolo reale ma aggiunge il disclaimer
     }
 
-    // LOGICA CONSUMER.HTML (CALCOLO REALE)
+    // CALCOLO REALE (Usato sia in consumer.html che nella demo "limitata")
     const dati = genere === "male" ? dataUomo : dataDonna;
     let opzioni = dati.filter(d => lunghezza >= d.MinLunghezza && lunghezza <= d.MaxLunghezza);
 
@@ -152,15 +152,30 @@ function calcolaTaglia() {
 
     const tagliaConsigliata = lang === "en" ? "Recommended size:" : "Taglia consigliata:";
     const tipoPiedeTesto = lang === "en" ? "Foot type:" : "Tipo piede:";
-
-    risultato.innerHTML = `
+    
+    // Costruiamo il box del risultato
+    let htmlResult = `
         <div style="border:2px solid #27ae60; padding:15px; border-radius:10px; background:#f4fff8;">
             <p style="margin:0; font-size:0.9em; color:#555;">${tagliaConsigliata}</p>
             <strong style="font-size:1.6em; color:#27ae60;">EU ${match.EU}</strong><br>
             <span style="color:#333;">UK ${match.UK} | US ${match.US}</span>
             <hr style="border:0; border-top:1px solid #c8e6d1; margin:10px 0;">
             <p style="margin:0; font-size:0.9em;">${tipoPiedeTesto} <strong>${notaPiede}</strong></p>
-        </div>`;
+    `;
+
+    // Se siamo nella landing, aggiungiamo il disclaimer in piccolo sotto
+    if (isLanding) {
+        const disclaimer = lang === "en" 
+            ? "Calculation calibrated on standard sample. <br>See it in action on: <a href='https://www.bfoutdoorshop.com' target='_blank' style='color:#27ae60;'>BF Outdoor Shop</a>" 
+            : "Calcolo calibrato su campione standard. <br>Scoprilo dal vivo su: <a href='https://www.bfoutdoorshop.com' target='_blank' style='color:#27ae60;'>BF Outdoor Shop</a>";
+        htmlResult += `
+            <p style="margin-top:10px; font-size:0.75em; color:#888; border-top: 1px dashed #ccc; pt-10px;">
+                ${disclaimer}
+            </p>`;
+    }
+
+    htmlResult += `</div>`;
+    risultato.innerHTML = htmlResult;
 }
 
 function changeLanguage() {
