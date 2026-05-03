@@ -1,138 +1,109 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R95ZFRPRPZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-R95ZFRPRPZ');
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footly.fit | Soluzioni B2B per E-commerce di Calzature</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f9fafb; margin: 0; padding: 0; color: #333; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; padding: 40px 0; }
+        .logo { max-width: 180px; margin-bottom: 20px; }
+        
+        .hero { text-align: center; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 40px; }
+        h1 { color: #1a1a1a; font-size: 2.2em; margin-bottom: 10px; }
+        .subtitle { font-size: 1.2em; color: #666; margin-bottom: 30px; }
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const button = document.getElementById("calculate-button");
-    if (button) {
-      button.addEventListener("click", function () {
-        gtag('event', 'calcolo_taglia', {
-          'event_category': 'interazione',
-          'event_label': 'Calcolo taglia avviato',
-          'value': 1
-        });
-      });
-    }
-  });
-</script>
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 15px; background: #000; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Footly – Misuratore taglie per ecommerce di scarpe</title>
+        .features { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin: 40px 0; text-align: center; }
+        .feature-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .feature-card h3 { color: #27ae60; margin-top: 0; }
 
-<style>
-body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 0; }
-.container { max-width: 600px; margin: auto; background: white; padding: 2em; border-radius: 10px; box-shadow: 0 0 10px #ccc; margin-top: 30px; }
-h1,h2,h3 { text-align: center; color: #2c3e50; }
-p { color:#333; line-height:1.4em; }
-.hero p { text-align:center; }
-.logo { max-width: 240px; display: block; margin: 0 auto 10px auto; }
-.btn { display:inline-block; padding:10px 14px; border-radius:6px; text-decoration:none; font-weight:bold; cursor:pointer; }
-.btn-primary { background:#27ae60; color:white; }
-.btn-secondary { background:white; border:1px solid #ccc; color:#2c3e50; }
-.cta-row { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:12px; }
-.section { margin-top:30px; }
-.bullets { list-style:none; padding:0; }
-.bullets li { margin:8px 0; }
-.cards { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-.card { border:1px solid #e6e6e6; border-radius:10px; padding:14px; text-align:center; }
-.price { font-size:1.4em; font-weight:bold; }
-label, select, input { display:block; width:100%; margin-bottom:1em; }
-button { width:100%; padding:10px; background:#27ae60; color:white; font-size:1.1em; border:none; border-radius:5px; cursor:pointer; }
-button:hover { background:#219150; }
-#result { margin-top:20px; font-weight:bold; text-align:center; }
-.small { font-size:0.9em; color:#666; text-align:center; }
-</style>
+        .demo-box { background: #fff; border: 2px solid #eef2f3; padding: 30px; border-radius: 20px; margin-top: 50px; }
+        .demo-badge { background: #27ae60; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8em; font-weight: bold; display: inline-block; margin-bottom: 10px; }
+        
+        label, select, input { display:block; width:100%; margin-bottom:1em; font-size:1em; box-sizing: border-box; }
+        input, select { padding: 12px; border: 1px solid #ddd; border-radius: 8px; }
+        button { width:100%; padding:15px; background:#27ae60; color:white; font-size:1.1em; border:none; border-radius:8px; cursor:pointer; font-weight: bold; transition: 0.3s; }
+        button:hover { background:#219150; transform: translateY(-2px); }
+        
+        #result { margin-top:20px; font-size:1.2em; font-weight:bold; text-align:center; color: #2c3e50; }
+        .footer-cta { text-align: center; padding: 60px 0; }
+        .btn-contact { background: #2c3e50; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; }
+
+        img.instr { max-width: 100%; height: auto; border-radius: 10px; margin: 20px auto; display: block; max-width: 400px; }
+        
+        .lang-select { text-align: right; margin-bottom: 10px; }
+    </style>
 </head>
-
 <body>
+
 <div class="container">
+    <div class="lang-select">
+        <select id="language" onchange="changeLanguage()" style="width: auto; display: inline;">
+            <option value="it">Italiano 🇮🇹</option>
+            <option value="en">English 🇬🇧</option>
+        </select>
+    </div>
 
-<img src="logo footly.png" class="logo" alt="Footly logo"/>
+    <header>
+        <img src="logo footly.png" alt="Footly Logo" class="logo">
+        <h1 id="main-title">Riduci i resi del tuo e-commerce</h1>
+        <p id="main-sub" class="subtitle">La soluzione plug-and-play per far scegliere ai tuoi clienti la taglia perfetta.</p>
+    </header>
 
-<div>
-<label id="lbl-lang">Lingua / Language</label>
-<select id="language" onchange="changeLanguage()">
-<option value="it">Italiano</option>
-<option value="en">English</option>
-</select>
-</div>
+    <div class="video-container">
+        <iframe src="https://player.vimeo.com/video/1158228058" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
 
-<div class="hero">
-<h1 id="title">Fai scegliere la taglia giusta delle scarpe online.</h1>
-<p id="description">
-Footly è un misuratore di piedi per <strong>ecommerce di scarpe sportive</strong>.
-Aiuta i clienti a scegliere la taglia corretta, riducendo errori e resi.
-</p>
+    <div class="features">
+        <div class="feature-card">
+            <h3 id="feat1-t">-30% Resi</h3>
+            <p id="feat1-p" style="font-size: 0.9em;">Elimina l'incertezza della taglia e abbatti i costi logistici.</p>
+        </div>
+        <div class="feature-card">
+            <h3 id="feat2-t">+Conversioni</h3>
+            <p id="feat2-p" style="font-size: 0.9em;">Aumenta la fiducia del cliente e riduci i carrelli abbandonati.</p>
+        </div>
+        <div class="feature-card">
+            <h3 id="feat3-t">Plug & Play</h3>
+            <p id="feat3-p" style="font-size: 0.9em;">Si integra in 5 minuti su Shopify, WooCommerce o siti custom.</p>
+        </div>
+    </div>
 
-<div class="cta-row">
-<a id="btn-demo" class="btn btn-primary" href="#demo">Guarda la demo</a>
-<a id="btn-contact" class="btn btn-secondary" href="mailto:info@footly.fit">Contattaci</a>
-</div>
+    <div class="demo-box" id="demo-section">
+        <span class="demo-badge" id="demo-label">DEMO ANTEPRIMA</span>
+        <h2 id="demo-title">Prova lo strumento</h2>
+        <p id="demo-sub" style="color: #666;">Ecco come apparirà Footly nella tua scheda prodotto:</p>
+        
+        <img src="lunghezza.jpg" alt="Istruzioni" class="instr">
 
-<p id="hero-small" class="small">Vuoi integrare Footly nel tuo ecommerce? Scrivici.</p>
-</div>
+        <label id="lbl-gender">Sesso</label>
+        <select id="gender">
+            <option id="opt-male" value="male">Uomo</option>
+            <option id="opt-female" value="female">Donna</option>
+        </select>
 
-<div class="section">
-<h2 id="why-title">Perché Footly aiuta a vendere meglio</h2>
-<ul id="bullets-list" class="bullets">
-<li id="bullet-1">❌ Taglie sbagliate = resi costosi</li>
-<li id="bullet-2">❌ Clienti indecisi = carrelli abbandonati</li>
-<li id="bullet-3">❌ Cambi continui = tempo perso</li>
-</ul>
-</div>
+        <label id="lbl-length">Lunghezza piede (cm)</label>
+        <input type="number" id="foot-length" placeholder="Es: 26.5" step="0.1">
 
-<div class="section">
-<h2 id="prices-title">Prezzi semplici</h2>
-<div class="cards">
-<div class="card">
-<strong id="plan-small">Ecommerce piccoli</strong>
-<div class="price">29 € / mese</div>
-</div>
-<div class="card">
-<strong id="plan-pro">Ecommerce strutturati</strong>
-<div class="price">49 € / mese</div>
-</div>
-</div>
-</div>
+        <label id="lbl-width">Larghezza piede (cm)</label>
+        <input type="number" id="foot-width" placeholder="Es: 10.2" step="0.1">
 
-<div class="section" id="demo">
-<h2 id="demo-title">Demo Footly</h2>
-<p id="demo-sub" class="small">Versione demo del misuratore integrabile negli ecommerce.</p>
+        <button id="calculate-button" onclick="calcolaTaglia()">CALCOLA TAGLIA</button>
+        <div id="result"></div>
+    </div>
 
-<label id="lbl-gender">Sesso</label>
-<select id="gender">
-<option id="opt-male" value="male">Uomo</option>
-<option id="opt-female" value="female">Donna</option>
-</select>
-
-<label id="lbl-length">Lunghezza piede (cm)</label>
-<input type="number" id="foot-length" step="0.1"/>
-
-<label id="lbl-width">Larghezza piede (cm)</label>
-<input type="number" id="foot-width" step="0.1"/>
-
-<button id="calculate-button" onclick="calcolaTaglia()">Calcola taglia</button>
-<div id="result"></div>
-
-<p id="note" class="small">Demo gratuita – nessun dato raccolto</p>
-</div>
-
-<footer class="small" style="margin-top:30px;">
-© 2026 Footly – <a href="mailto:info@footly.fit">info@footly.fit</a>
-</footer>
-
+    <div class="footer-cta">
+        <h2 id="cta-title">Pronto a ottimizzare il tuo store?</h2>
+        <p id="cta-sub">Contattaci per una prova gratuita o per caricare le tue tabelle taglie personalizzate.</p>
+        <br>
+        <a href="mailto:info@footly.fit" class="btn-contact" id="btn-contact">CONTATTACI ORA</a>
+    </div>
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
