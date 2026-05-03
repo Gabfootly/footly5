@@ -121,7 +121,6 @@ function calcolaTaglia() {
             notaPiede = lang === "en" ? "Extra Wide Fit" : "Pianta extra larga";
         }
     } else {
-        // Traduzione dinamica del tipo piede
         if (lang === "en") {
             notaPiede = match.Tipo_piede.replace("Normale/stretto", "Normal/Narrow").replace("Piede largo", "Wide Fit").replace("Piede Molto largo", "Extra Wide Fit");
         } else {
@@ -142,83 +141,63 @@ function calcolaTaglia() {
         </div>`;
 }
 
-// FUNZIONE CAMBIO LINGUA POTENZIATA (Index + Consumer)
 function changeLanguage() {
     const lang = document.getElementById("language").value;
     
     const t = {
         it: {
-            title: "Fai scegliere la taglia giusta delle scarpe online.",
-            desc: "Footly è un misuratore di piedi per <strong>ecommerce di scarpe sportive</strong>. Aiuta i clienti a scegliere la taglia corretta, riducendo errori e resi.",
-            btnDemo: "Guarda la demo",
-            btnContact: "Contattaci",
-            heroSmall: "Vuoi integrare Footly nel tuo ecommerce? Scrivici.",
-            why: "Perché Footly aiuta a vendere meglio",
-            b1: "❌ Taglie sbagliate = resi costosi",
-            b2: "❌ Clienti indecisi = carrelli abbandonati",
-            b3: "❌ Cambi continui = tempo perso",
-            prices: "Prezzi semplici",
-            p1: "Ecommerce piccoli",
-            p2: "Ecommerce strutturati",
-            demoT: "Demo Footly",
-            demoS: "Versione demo del misuratore integrabile negli ecommerce.",
-            gender: "Sesso",
-            male: "Uomo",
-            female: "Donna",
-            len: "Lunghezza piede (cm)",
-            wid: "Larghezza piede (cm)",
-            btnCalc: "Calcola taglia",
-            note: "Demo gratuita – nessun dato raccolto"
+            "main-title": "Riduci i resi del tuo e-commerce",
+            "main-sub": "La soluzione plug-and-play per far scegliere ai tuoi clienti la taglia perfetta.",
+            "feat1-t": "-30% Resi",
+            "feat1-p": "Elimina l'incertezza della taglia e abbatti i costi logistici.",
+            "feat2-t": "+Conversioni",
+            "feat2-p": "Aumenta la fiducia del cliente e riduci i carrelli abbandonati.",
+            "feat3-t": "Plug & Play",
+            "feat3-p": "Si integra in 5 minuti su Shopify, WooCommerce o siti custom.",
+            "demo-label": "DEMO ANTEPRIMA",
+            "demo-title": "Prova lo strumento",
+            "demo-sub": "Ecco come apparirà Footly nella tua scheda prodotto:",
+            "lbl-gender": "Sesso",
+            "opt-male": "Uomo",
+            "opt-female": "Donna",
+            "lbl-length": "Lunghezza piede (cm)",
+            "lbl-width": "Larghezza piede (cm)",
+            "calculate-button": "CALCOLA TAGLIA",
+            "cta-title": "Pronto a ottimizzare il tuo store?",
+            "cta-sub": "Contattaci per una prova gratuita o per caricare le tue tabelle taglie personalizzate.",
+            "btn-contact": "CONTATTACI ORA"
         },
         en: {
-            title: "Help your customers choose the right shoe size online.",
-            desc: "Footly is a foot measurement tool for <strong>sports shoe e-commerce</strong>. It helps customers pick the correct size, reducing errors and returns.",
-            btnDemo: "Watch the demo",
-            btnContact: "Contact us",
-            heroSmall: "Want to integrate Footly? Write to us.",
-            why: "Why Footly helps you sell more",
-            b1: "❌ Wrong sizes = costly returns",
-            b2: "❌ Undecided customers = abandoned carts",
-            b3: "❌ Constant exchanges = wasted time",
-            prices: "Simple pricing",
-            p1: "Small shops",
-            p2: "Enterprise shops",
-            demoT: "Footly Demo",
-            demoS: "Demo version of the calculator for e-commerce.",
-            gender: "Gender",
-            male: "Male",
-            female: "Female",
-            len: "Foot length (cm)",
-            wid: "Foot width (cm)",
-            btnCalc: "Calculate Size",
-            note: "Free demo – no data collected"
+            "main-title": "Reduce your e-commerce returns",
+            "main-sub": "The plug-and-play solution to let your customers choose the perfect size.",
+            "feat1-t": "-30% Returns",
+            "feat1-p": "Eliminate size uncertainty and cut logistics costs.",
+            "feat2-t": "+Conversions",
+            "feat2-p": "Increase customer confidence and reduce abandoned carts.",
+            "feat3-t": "Plug & Play",
+            "feat3-p": "Integrates in 5 minutes on Shopify, WooCommerce, or custom sites.",
+            "demo-label": "DEMO PREVIEW",
+            "demo-title": "Try the tool",
+            "demo-sub": "This is how Footly will look on your product page:",
+            "lbl-gender": "Gender",
+            "opt-male": "Male",
+            "opt-female": "Female",
+            "lbl-length": "Foot length (cm)",
+            "lbl-width": "Foot width (cm)",
+            "calculate-button": "CALCULATE SIZE",
+            "cta-title": "Ready to optimize your store?",
+            "cta-sub": "Contact us for a free trial or to upload your custom size charts.",
+            "btn-contact": "CONTACT US NOW"
         }
     };
 
     const sel = t[lang];
 
-    // Landing Page
-    if(document.getElementById("title")) document.getElementById("title").textContent = sel.title;
-    if(document.getElementById("description")) document.getElementById("description").innerHTML = sel.desc;
-    if(document.getElementById("btn-demo")) document.getElementById("btn-demo").textContent = sel.btnDemo;
-    if(document.getElementById("btn-contact")) document.getElementById("btn-contact").textContent = sel.btnContact;
-    if(document.getElementById("hero-small")) document.getElementById("hero-small").textContent = sel.heroSmall;
-    if(document.getElementById("why-title")) document.getElementById("why-title").textContent = sel.why;
-    if(document.getElementById("bullet-1")) document.getElementById("bullet-1").textContent = sel.b1;
-    if(document.getElementById("bullet-2")) document.getElementById("bullet-2").textContent = sel.b2;
-    if(document.getElementById("bullet-3")) document.getElementById("bullet-3").textContent = sel.b3;
-    if(document.getElementById("prices-title")) document.getElementById("prices-title").textContent = sel.prices;
-    if(document.getElementById("plan-small")) document.getElementById("plan-small").textContent = sel.p1;
-    if(document.getElementById("plan-pro")) document.getElementById("plan-pro").textContent = sel.p2;
-
-    // Calcolatore (comune a Index e Consumer)
-    if(document.getElementById("demo-title")) document.getElementById("demo-title").textContent = sel.demoT;
-    if(document.getElementById("demo-sub")) document.getElementById("demo-sub").textContent = sel.demoS;
-    if(document.getElementById("lbl-gender")) document.getElementById("lbl-gender").textContent = sel.gender;
-    if(document.getElementById("opt-male")) document.getElementById("opt-male").textContent = sel.male;
-    if(document.getElementById("opt-female")) document.getElementById("opt-female").textContent = sel.female;
-    if(document.getElementById("lbl-length")) document.getElementById("lbl-length").textContent = sel.len;
-    if(document.getElementById("lbl-width")) document.getElementById("lbl-width").textContent = sel.wid;
-    if(document.getElementById("calculate-button")) document.getElementById("calculate-button").textContent = sel.btnCalc;
-    if(document.getElementById("note")) document.getElementById("note").textContent = sel.note;
+    // Ciclo per tradurre tutti gli elementi basandosi sugli ID definiti sopra
+    for (let id in sel) {
+        const el = document.getElementById(id);
+        if (el) {
+            el.innerText = sel[id];
+        }
+    }
 }
