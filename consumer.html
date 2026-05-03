@@ -18,13 +18,29 @@ button:hover { background:#219150; }
 .small { font-size:0.9em; color:#666; text-align:center; }
 .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius:10px; margin-bottom:20px; }
 .video-wrapper iframe { position:absolute; top:0; left:0; width:100%; height:100%; }
-img { max-width: 100%;
+
+/* Fix per sfondo nero su mobile e centratura immagini */
+img { 
+  max-width: 100%;
   border-radius: 10px;
-  margin: 20px 0;
-  background-color: white; /* Forza lo sfondo bianco per le immagini trasparenti */
-  display: block;
-  margin-left: auto;
-  margin-right: auto; }
+  margin: 20px auto;
+  background-color: white; /* Risolve il problema dello sfondo nero */
+  display: block; 
+}
+
+/* Stile per il selettore lingua */
+.lang-selector {
+  text-align: right;
+  margin-bottom: 15px;
+}
+.lang-selector select {
+  display: inline-block;
+  width: auto;
+  padding: 5px;
+  font-size: 0.9em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
 </style>
 
 </head>
@@ -32,12 +48,14 @@ img { max-width: 100%;
 <body>
 <div class="container">
 
-<img src="logo footly.png" alt="Footly Logo" style="max-width:200px; display:block; margin:0 auto 10px auto;" />
+<div class="lang-selector">
+  <select id="language" onchange="changeLanguage()">
+    <option value="it">Italiano 🇮🇹</option>
+    <option value="en">English 🇬🇧</option>
+  </select>
+</div>
 
-<select id="language" onchange="changeLanguage()" style="display:none;">
-  <option value="it">Italiano</option>
-  <option value="en">English</option>
-</select>
+<img src="logo footly.png" alt="Footly Logo" style="max-width:200px; display:block; margin:0 auto 10px auto;" />
 
 <h1 id="demo-title">Calcola la tua taglia in 1 minuto</h1>
 <p id="demo-sub" class="small">Guarda il video, poi usa il misuratore qui sotto.</p>
@@ -57,7 +75,7 @@ img { max-width: 100%;
 
 <hr style="margin:25px 0;">
 
-<h2>Inserisci le tue misure</h2>
+<h2 id="demo-title-misure">Inserisci le tue misure</h2>
 
   <label id="lbl-gender">Sesso</label>
   <select id="gender">
