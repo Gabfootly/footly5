@@ -155,8 +155,10 @@ function changeLanguage() {
             "feat3-t": "Plug & Play",
             "feat3-p": "Si integra in 5 minuti su Shopify, WooCommerce o siti custom.",
             "demo-label": "DEMO ANTEPRIMA",
-            "demo-title": "Prova lo strumento",
-            "demo-sub": "Ecco come apparirà Footly nella tua scheda prodotto:",
+            "demo-title": "Esempio di integrazione",
+            "demo-sub": "Ecco come i tuoi clienti visualizzeranno Footly sul tuo sito:",
+            "instr-title": "1. Istruzioni per il cliente",
+            "calc-title": "2. Calcolatore dinamico",
             "lbl-gender": "Sesso",
             "opt-male": "Uomo",
             "opt-female": "Donna",
@@ -164,8 +166,9 @@ function changeLanguage() {
             "lbl-width": "Larghezza piede (cm)",
             "calculate-button": "CALCOLA TAGLIA",
             "cta-title": "Pronto a ottimizzare il tuo store?",
-            "cta-sub": "Contattaci per una prova gratuita o per caricare le tue tabelle taglie personalizzate.",
-            "btn-contact": "CONTATTACI ORA"
+            "cta-sub": "Scegli la precisione di Footly per i tuoi clienti.",
+            "price-tag": "A partire da €29 / mese",
+            "btn-contact": "CONTATTACI PER UNA PROVA"
         },
         en: {
             "main-title": "Reduce your e-commerce returns",
@@ -177,8 +180,10 @@ function changeLanguage() {
             "feat3-t": "Plug & Play",
             "feat3-p": "Integrates in 5 minutes on Shopify, WooCommerce, or custom sites.",
             "demo-label": "DEMO PREVIEW",
-            "demo-title": "Try the tool",
-            "demo-sub": "This is how Footly will look on your product page:",
+            "demo-title": "Integration Example",
+            "demo-sub": "This is how your customers will see Footly on your site:",
+            "instr-title": "1. Customer Instructions",
+            "calc-title": "2. Dynamic Calculator",
             "lbl-gender": "Gender",
             "opt-male": "Male",
             "opt-female": "Female",
@@ -186,14 +191,14 @@ function changeLanguage() {
             "lbl-width": "Foot width (cm)",
             "calculate-button": "CALCULATE SIZE",
             "cta-title": "Ready to optimize your store?",
-            "cta-sub": "Contact us for a free trial or to upload your custom size charts.",
-            "btn-contact": "CONTACT US NOW"
+            "cta-sub": "Choose Footly's precision for your customers.",
+            "price-tag": "Starting from €29 / month",
+            "btn-contact": "CONTACT US FOR A TRIAL"
         }
     };
 
     const sel = t[lang];
 
-    // Ciclo per tradurre tutti gli elementi basandosi sugli ID definiti sopra
     for (let id in sel) {
         const el = document.getElementById(id);
         if (el) {
