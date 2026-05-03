@@ -1,9 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
 
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R95ZFRPRPZ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -149,17 +147,16 @@ button:hover {
 <img src="logo footly.png" class="logo" alt="Footly logo"/>
 
 <div>
-<label>Lingua / Language</label>
-<select id="language">
+<label id="lbl-lang">Lingua / Language</label>
+<select id="language" onchange="changeLanguage()">
 <option value="it">Italiano</option>
 <option value="en">English</option>
 </select>
 </div>
 
-<!-- HOME -->
 <div class="hero">
-<h1>Fai scegliere la taglia giusta delle scarpe online.</h1>
-<p>
+<h1 id="title">Fai scegliere la taglia giusta delle scarpe online.</h1>
+<p id="description">
 Footly è un misuratore di piedi per <strong>ecommerce di scarpe sportive</strong>.
 Aiuta i clienti a scegliere la taglia corretta, riducendo errori e resi.
 </p>
@@ -172,9 +169,8 @@ Aiuta i clienti a scegliere la taglia corretta, riducendo errori e resi.
 <p class="small">Vuoi integrare Footly nel tuo ecommerce? Scrivici.</p>
 </div>
 
-<!-- PERCHÉ -->
 <div class="section">
-<h2>Perché Footly aiuta a vendere meglio</h2>
+<h2 id="why-title">Perché Footly aiuta a vendere meglio</h2>
 <ul class="bullets">
 <li>❌ Taglie sbagliate = resi costosi</li>
 <li>❌ Clienti indecisi = carrelli abbandonati</li>
@@ -182,9 +178,8 @@ Aiuta i clienti a scegliere la taglia corretta, riducendo errori e resi.
 </ul>
 </div>
 
-<!-- PREZZI -->
 <div class="section">
-<h2>Prezzi semplici</h2>
+<h2 id="prices-title">Prezzi semplici</h2>
 <div class="cards">
 <div class="card">
 <strong>Ecommerce piccoli</strong>
@@ -197,27 +192,26 @@ Aiuta i clienti a scegliere la taglia corretta, riducendo errori e resi.
 </div>
 </div>
 
-<!-- DEMO -->
 <div class="section" id="demo">
-<h2>Demo Footly</h2>
+<h2 id="demo-title">Demo Footly</h2>
 <p class="small">Versione demo del misuratore integrabile negli ecommerce.</p>
 
-<label>Sesso</label>
+<label id="lbl-gender">Sesso</label>
 <select id="gender">
 <option value="male">Uomo</option>
 <option value="female">Donna</option>
 </select>
 
-<label>Lunghezza piede (cm)</label>
-<input type="number" id="foot-length" min="20" max="32" step="0.1"/>
+<label id="lbl-length">Lunghezza piede (cm)</label>
+<input type="number" id="foot-length" step="0.1"/>
 
-<label>Larghezza piede (cm)</label>
-<input type="number" id="foot-width" min="7" max="14" step="0.1"/>
+<label id="lbl-width">Larghezza piede (cm)</label>
+<input type="number" id="foot-width" step="0.1"/>
 
 <button id="calculate-button" onclick="calcolaTaglia()">Calcola taglia</button>
 <div id="result"></div>
 
-<p class="small">Demo gratuita – nessun dato raccolto</p>
+<p id="note" class="small">Demo gratuita – nessun dato raccolto</p>
 </div>
 
 <footer class="small" style="margin-top:30px;">
@@ -226,13 +220,7 @@ Aiuta i clienti a scegliere la taglia corretta, riducendo errori e resi.
 
 </div>
 
-<script src="script.protetto.js"></script>
-
-<script>
-document.getElementById("language").addEventListener("change", function () {
-  const lang = this.value;
-});
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
