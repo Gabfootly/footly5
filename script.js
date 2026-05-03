@@ -106,7 +106,6 @@ function calcolaTaglia() {
 
     // --- LOGICA DEMO LIMITATA (Landing Page) ---
     if (isLanding) {
-        // Range attivo per mostrare il funzionamento (24cm - 26cm)
         if (lunghezza < 24 || lunghezza > 26) {
             const demoMsg = lang === "en" 
                 ? "<strong>DEMO LIMIT:</strong> To test the algorithm on all sizes, check the live integration on this store:" 
@@ -120,7 +119,7 @@ function calcolaTaglia() {
                     <a href="https://bfoutdoorshop.com/products/ultraventure-4-w?variant=51507061490006" 
                        target="_blank" 
                        style="display:inline-block; background:#27ae60; color:white; padding:10px 18px; border-radius:5px; text-decoration:none; font-weight:bold; font-size:0.8em; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        ${btnText}
+                         ${btnText}
                     </a>
                 </div>`;
             return;
@@ -165,7 +164,6 @@ function calcolaTaglia() {
             <p style="margin:0; font-size:0.9em;">${tipoPiedeTesto} <strong>${notaPiede}</strong></p>
     `;
 
-    // Disclaimer sotto il risultato per la Landing Page
     if (isLanding) {
         const promoText = lang === "en" 
             ? "This is the result if 25.7 cm length and 10 cm width are entered. <br>See it live on: <a href='https://bfoutdoorshop.com/products/ultraventure-4-w?variant=51507061490006' target='_blank' style='color:#27ae60; font-weight:bold;'>BF Outdoor Shop</a>" 
@@ -185,56 +183,39 @@ function changeLanguage() {
     const lang = document.getElementById("language").value;
     const t = {
         it: {
-            "main-title": "Riduci i resi del tuo e-commerce",
-            "main-sub": "La soluzione plug-and-play per far scegliere ai tuoi clienti la taglia perfetta.",
-            "feat1-t": "-30% Resi",
-            "feat1-p": "Elimina l'incertezza della taglia e abbatti i costi logistici.",
-            "feat2-t": "+Conversioni",
-            "feat2-p": "Aumenta la fiducia del cliente e riduci i carrelli abbandonati.",
-            "feat3-t": "Plug & Play",
-            "feat3-p": "Si integra in 5 minuti su Shopify, WooCommerce o siti custom.",
-            "demo-label": "DEMO ANTEPRIMA",
-            "demo-title": "Esempio di integrazione",
-            "demo-sub": "Ecco come i tuoi clienti visualizzeranno Footly sul tuo sito:",
-            "instr-title": "1. Istruzioni per il cliente",
-            "calc-title": "2. Calcolatore dinamico",
+            "demo-title": "Calcola la tua taglia in 1 minuto",
+            "demo-sub": "Guarda il video, poi usa il misuratore qui sotto.",
+            "lbl-how-to": "Come prendere le misure",
+            "lbl-how-to-sub": "Misura entrambi i piedi e inserisci la misura del più lungo.",
+            "demo-title-misure": "Inserisci le tue misure",
             "lbl-gender": "Sesso",
             "opt-male": "Uomo",
             "opt-female": "Donna",
             "lbl-length": "Lunghezza piede (cm)",
             "lbl-width": "Larghezza piede (cm)",
             "calculate-button": "CALCOLA TAGLIA",
-            "cta-title": "Pronto a ottimizzare il tuo store?",
-            "cta-sub": "Scegli la precisione di Footly per i tuoi clienti.",
-            "price-tag": "A partire da €29 / mese",
-            "btn-contact": "CONTATTACI PER UNA PROVA"
+            "v-title": "🛡️ Sistema di Validazione Incrociata",
+            "v-descr": "Il calcolo è basato sulla convergenza dei dati: la taglia è affidabile all'83% quando almeno due parametri (es. EU e UK) coincidono sulle tabelle ufficiali dei brand. Questa doppia conferma garantisce la scelta corretta.",
+            "note": "Servizio offerto da Footly.fit"
         },
         en: {
-            "main-title": "Reduce your e-commerce returns",
-            "main-sub": "The plug-and-play solution to let your customers choose the perfect size.",
-            "feat1-t": "-30% Returns",
-            "feat1-p": "Eliminate size uncertainty and cut logistics costs.",
-            "feat2-t": "+Conversions",
-            "feat2-p": "Increase customer confidence and reduce abandoned carts.",
-            "feat3-t": "Plug & Play",
-            "feat3-p": "Integrates in 5 minutes on Shopify, WooCommerce, or custom sites.",
-            "demo-label": "DEMO PREVIEW",
-            "demo-title": "Integration Example",
-            "demo-sub": "This is how your customers will see Footly on your site:",
-            "instr-title": "1. Customer Instructions",
-            "calc-title": "2. Dynamic Calculator",
+            "demo-title": "Calculate your size in 1 minute",
+            "demo-sub": "Watch the video, then use the measurement tool below.",
+            "lbl-how-to": "How to measure",
+            "lbl-how-to-sub": "Measure both feet and enter the longest measurement.",
+            "demo-title-misure": "Enter your measurements",
             "lbl-gender": "Gender",
             "opt-male": "Male",
             "opt-female": "Female",
             "lbl-length": "Foot length (cm)",
             "lbl-width": "Foot width (cm)",
             "calculate-button": "CALCULATE SIZE",
-            "cta-title": "Ready to optimize your store?",
-            "cta-sub": "Choose Footly's precision for your customers.",
-            "price-tag": "Starting from €29 / month",
-            "btn-contact": "CONTACT US FOR A TRIAL"
+            "v-title": "🛡️ Cross-Validation System",
+            "v-descr": "The calculation is based on data convergence: the size is 83% reliable when at least two parameters (e.g., EU and UK) match across official brand charts. This double verification ensures the correct choice.",
+            "note": "Service provided by Footly.fit"
         }
     };
+    
     const sel = t[lang];
     for (let id in sel) {
         const el = document.getElementById(id);
