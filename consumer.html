@@ -87,43 +87,15 @@ img {
 <div class="container">
 
 <img src="logo footly.png" alt="Footly Logo" style="max-width:200px; display:block; margin:0 auto 10px auto;" />
-<!-- ✅ Placeholder nascosti per compatibilità con script.protetto.js (NON toccano la grafica) -->
-<div style="display:none;">
-  <label>Lingua / Language</label>
-  <select id="language">
+
+<select id="language" style="display:none;">
     <option value="it">Italiano</option>
     <option value="en">English</option>
-  </select>
+</select>
 
-  <h1 id="hero-title"></h1>
-  <p id="hero-sub"></p>
-  <p id="hero-small"></p>
-
-  <h2 id="why-title"></h2>
-  <div id="why-1"></div>
-  <div id="why-2"></div>
-  <div id="why-3"></div>
-
-  <h2 id="prices-title"></h2>
-  <div id="plan-small"></div>
-  <div id="plan-pro"></div>
-
-  <h2 id="demo-title"></h2>
-  <p id="demo-sub"></p>
-  <p id="demo-note"></p>
-
-  <span id="footer-text"></span>
-
-  <a id="btn-demo"></a>
-  <a id="btn-contact"></a>
-
-  <div id="footly-privacy"></div>
-  <div id="testimonial-heading"></div>
-</div>
 <h1>Calcola la tua taglia in 1 minuto</h1>
 <p class="small">Guarda il video, poi usa il misuratore qui sotto.</p>
 
-<!-- VIDEO VIMEO -->
 <div class="video-wrapper">
   <iframe
     src="https://player.vimeo.com/video/1158228058"
@@ -139,8 +111,7 @@ img {
 
 <hr style="margin:25px 0;">
 
-<h2>Prova ora il misuratore</h2>
-
+<h2>Inserisci le tue misure</h2>
 
   <label id="lbl-gender">Sesso</label>
   <select id="gender">
@@ -149,18 +120,19 @@ img {
   </select>
 
   <label id="lbl-length">Lunghezza piede (cm)</label>
-  <input type="number" id="foot-length" min="20" max="32" step="0.1"/>
+  <input type="number" id="foot-length" placeholder="Es: 26.5" step="0.1"/>
 
   <label id="lbl-width">Larghezza piede (cm)</label>
-  <input type="number" id="foot-width" min="7" max="14" step="0.1"/>
+  <input type="number" id="foot-width" placeholder="Es: 10.2" step="0.1"/>
 
   <button id="calculate-button" type="button" onclick="calcolaTaglia()">Calcola taglia</button>
+  
   <div id="result"></div>
 
-  <p class="small">Demo gratuita – nessun dato raccolto</p>
+  <p class="small" style="margin-top:20px;">Servizio offerto da Footly.fit</p>
 </div>
 
-<script src="script.protetto.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
