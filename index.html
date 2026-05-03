@@ -21,19 +21,24 @@
         .feature-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
         .feature-card h3 { color: #27ae60; margin-top: 0; }
 
-        .demo-box { background: #fff; border: 2px solid #eef2f3; padding: 30px; border-radius: 20px; margin-top: 50px; }
+        .demo-box { background: #fff; border: 2px solid #eef2f3; padding: 30px; border-radius: 20px; margin-top: 50px; position: relative; }
         .demo-badge { background: #27ae60; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8em; font-weight: bold; display: inline-block; margin-bottom: 10px; }
         
+        /* Titolo istruzioni sopra l'immagine */
+        .instr-title { font-weight: bold; margin-top: 20px; color: #2c3e50; text-align: center; }
+
         label, select, input { display:block; width:100%; margin-bottom:1em; font-size:1em; box-sizing: border-box; }
         input, select { padding: 12px; border: 1px solid #ddd; border-radius: 8px; }
         button { width:100%; padding:15px; background:#27ae60; color:white; font-size:1.1em; border:none; border-radius:8px; cursor:pointer; font-weight: bold; transition: 0.3s; }
         button:hover { background:#219150; transform: translateY(-2px); }
         
         #result { margin-top:20px; font-size:1.2em; font-weight:bold; text-align:center; color: #2c3e50; }
-        .footer-cta { text-align: center; padding: 60px 0; }
-        .btn-contact { background: #2c3e50; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; }
+        
+        .footer-cta { text-align: center; padding: 60px 0; background: #fff; border-radius: 20px; margin-top: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .price-tag { font-size: 1.5em; color: #27ae60; font-weight: bold; margin: 15px 0; display: block; }
+        .btn-contact { background: #2c3e50; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; display: inline-block; margin-top: 10px; }
 
-        img.instr { max-width: 100%; height: auto; border-radius: 10px; margin: 20px auto; display: block; max-width: 400px; }
+        img.instr { max-width: 100%; height: auto; border-radius: 10px; margin: 10px auto 30px auto; display: block; max-width: 380px; border: 1px solid #eee; }
         
         .lang-select { text-align: right; margin-bottom: 10px; }
     </style>
@@ -55,13 +60,7 @@
     </header>
 
     <div class="video-container">
-        <iframe 
-        src="https://player.vimeo.com/video/1158228058?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-        frameborder="0" 
-        allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
-        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-        title="Istruzioni Footly">
-    </iframe>
+        <iframe src="https://player.vimeo.com/video/1158228058?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
     </div>
 
     <div class="features">
@@ -81,11 +80,13 @@
 
     <div class="demo-box" id="demo-section">
         <span class="demo-badge" id="demo-label">DEMO ANTEPRIMA</span>
-        <h2 id="demo-title">Prova lo strumento</h2>
-        <p id="demo-sub" style="color: #666;">Ecco come apparirà Footly nella tua scheda prodotto:</p>
+        <h2 id="demo-title">Esempio di integrazione</h2>
+        <p id="demo-sub" style="color: #666; text-align: center;">Ecco come i tuoi clienti visualizzeranno Footly sul tuo sito:</p>
         
+        <div class="instr-title" id="instr-title">1. Istruzioni per il cliente</div>
         <img src="lunghezza.jpg" alt="Istruzioni" class="instr">
 
+        <div class="instr-title" id="calc-title" style="margin-bottom:15px;">2. Calcolatore dinamico</div>
         <label id="lbl-gender">Sesso</label>
         <select id="gender">
             <option id="opt-male" value="male">Uomo</option>
@@ -104,9 +105,9 @@
 
     <div class="footer-cta">
         <h2 id="cta-title">Pronto a ottimizzare il tuo store?</h2>
-        <p id="cta-sub">Contattaci per una prova gratuita o per caricare le tue tabelle taglie personalizzate.</p>
-        <br>
-        <a href="mailto:info@footly.fit" class="btn-contact" id="btn-contact">CONTATTACI ORA</a>
+        <p id="cta-sub">Scegli la precisione di Footly per i tuoi clienti.</p>
+        <span class="price-tag" id="price-tag">A partire da €29 / mese</span>
+        <a href="mailto:info@footly.fit" class="btn-contact" id="btn-contact">CONTATTACI PER UNA PROVA</a>
     </div>
 </div>
 
