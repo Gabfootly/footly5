@@ -1,6 +1,6 @@
 /* FOOTLY - Motore di calcolo B2B 2026
    Proprietà di Gabriele Sanzi
-   Logica: Calcolo Reale + Traduzione Completa Landing
+   Logica: Calcolo Reale + Traduzione Completa Consumer & Commerciale
 */
 
 const dataUomo = [
@@ -183,60 +183,50 @@ function changeLanguage() {
     const lang = document.getElementById("language").value;
     const t = {
         it: {
-            // LANDING PAGE (index.html)
             "main-title": "Riduci i resi del tuo e-commerce",
             "main-sub": "La soluzione plug-and-play per far scegliere ai tuoi clienti la taglia perfetta.",
-            "feat1-t": "-30% Resi",
-            "feat1-p": "Elimina l'incertezza della taglia e abbatti i costi logistici.",
-            "feat2-t": "+Conversioni",
-            "feat2-p": "Aumenta la fiducia del cliente e riduci i carrelli abbandonati.",
-            "feat3-t": "Plug & Play",
-            "feat3-p": "Si integra in 5 minuti su Shopify, WooCommerce o siti custom.",
             "demo-label": "DEMO ANTEPRIMA",
-            "demo-title": "Esempio di integrazione",
-            "demo-sub": "Ecco come i tuoi clienti visualizzeranno Footly sul tuo sito:",
-            "instr-title": "1. Istruzioni per il cliente",
-            "calc-title": "2. Calcolatore dinamico",
-            "cta-title": "Pronto a ottimizzare il tuo store?",
-            "cta-sub": "Scegli la precisione di Footly per i tuoi clienti.",
-            "price-tag": "A partire da €29 / mese",
-            "btn-contact": "CONTATTACI PER UNA PROVA",
-
-            // CALCOLATORE
+            "demo-title": "Calcola la tua taglia in 1 minuto",
+            "demo-sub": "Guarda il video, poi usa il misuratore qui sotto.",
+            "lbl-how-to": "Come prendere le misure",
+            "lbl-how-to-sub": "Misura entrambi i piedi e inserisci la misura del più lungo.",
+            "demo-title-misure": "Inserisci le tue misure",
             "lbl-gender": "Sesso",
             "opt-male": "Uomo",
             "opt-female": "Donna",
             "lbl-length": "Lunghezza piede (cm)",
             "lbl-width": "Larghezza piede (cm)",
-            "calculate-button": "CALCOLA TAGLIA"
+            "calculate-button": "CALCOLA TAGLIA",
+            "v-title": "🛡️ Sistema di Validazione Incrociata",
+            "v-descr": "Il calcolo è basato sulla convergenza dei dati: la taglia è affidabile all'83% quando almeno due parametri (es. EU e UK) coincidono sulle tabelle ufficiali dei brand.",
+            "btn-contact": "CONTATTACI PER UNA PROVA",
+            "price-tag": "A partire da €29 / mese",
+            "note": "Servizio offerto da Footly.fit",
+            "cta-title": "Pronto a ottimizzare il tuo store?",
+            "cta-sub": "Scegli la precisione di Footly per i tuoi clienti."
         },
         en: {
-            // LANDING PAGE (index.html)
             "main-title": "Reduce your e-commerce returns",
             "main-sub": "The plug-and-play solution to help your customers choose the perfect size.",
-            "feat1-t": "-30% Returns",
-            "feat1-p": "Eliminate size uncertainty and cut logistics costs.",
-            "feat2-t": "+Conversions",
-            "feat2-p": "Increase customer confidence and reduce abandoned carts.",
-            "feat3-t": "Plug & Play",
-            "feat3-p": "Integrates in 5 minutes on Shopify, WooCommerce or custom sites.",
-            "demo-label": "PREVIEW DEMO",
-            "demo-title": "Integration Example",
-            "demo-sub": "This is how your customers will see Footly on your site:",
-            "instr-title": "1. Customer Instructions",
-            "calc-title": "2. Dynamic Calculator",
-            "cta-title": "Ready to optimize your store?",
-            "cta-sub": "Choose Footly's precision for your customers.",
-            "price-tag": "Starting at €29 / month",
-            "btn-contact": "CONTACT US FOR A TRIAL",
-
-            // CALCOLATORE
+            "demo-label": "DEMO PREVIEW",
+            "demo-title": "Calculate your size in 1 minute",
+            "demo-sub": "Watch the video, then use the calculator below.",
+            "lbl-how-to": "How to take measurements",
+            "lbl-how-to-sub": "Measure both feet and enter the size of the longest one.",
+            "demo-title-misure": "Enter your measurements",
             "lbl-gender": "Gender",
             "opt-male": "Male",
             "opt-female": "Female",
             "lbl-length": "Foot length (cm)",
             "lbl-width": "Foot width (cm)",
-            "calculate-button": "CALCULATE SIZE"
+            "calculate-button": "CALCULATE SIZE",
+            "v-title": "🛡️ Cross-Validation System",
+            "v-descr": "The calculation is based on data convergence: accuracy is 83% reliable when at least two parameters (e.g. EU and UK) match official brand tables.",
+            "btn-contact": "CONTACT US FOR A TRIAL",
+            "price-tag": "Starting at €29 / month",
+            "note": "Service provided by Footly.fit",
+            "cta-title": "Ready to optimize your store?",
+            "cta-sub": "Choose Footly's precision for your customers."
         }
     };
     
@@ -246,7 +236,6 @@ function changeLanguage() {
         if (el) { el.innerText = sel[id]; }
     }
     
-    // Pulisce risultato al cambio lingua
     const res = document.getElementById("result");
     if(res) res.innerHTML = "";
 }
