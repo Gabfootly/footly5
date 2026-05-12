@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M21P1GB9ZE"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M21P1GB9ZE"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -39,7 +38,6 @@
       margin-right: auto;
     }
 
-    /* Stile per il selettore lingua */
     .lang-selector {
       text-align: right;
       margin-bottom: 15px;
@@ -53,7 +51,6 @@
       border: 1px solid #ccc;
     }
 
-    /* Box Validazione Incrociata */
     .verification-box {
       margin-top: 25px;
       padding: 15px;
@@ -90,7 +87,7 @@
   <img src="logo footly.png" alt="Footly Logo" style="max-width:200px; display:block; margin:0 auto 10px auto;" />
 
   <h1 id="demo-title">Calcola la tua taglia in 1 minuto</h1>
-  <p id="demo-sub" class="small">Guarda il video, poi usa il misuratore qui sotto.</p>
+  <p id="demo-sub" class="small">Misuratore per scarpe sportive: Running, Trekking, Volley e Basket</p>
 
   <div class="video-wrapper">
     <iframe
@@ -121,12 +118,12 @@
   <label id="lbl-width">Larghezza piede (cm)</label>
   <input type="number" id="foot-width" placeholder="Es: 10.2" step="0.1"/>
 
-<button id="calculate-button" type="button" onclick="gtag('event', 'click_calcola_taglia', {'event_category': 'engagement'}); calcolaTaglia()">Calcola taglia</button>  
+<button id="calculate-button" type="button" onclick="gtag('event', 'click_calcola_taglia', {'event_category': 'engagement'}); calcolaTaglia()">CALCOLA TAGLIA</button>  
   <div id="result"></div>
 
   <div class="verification-box">
     <strong id="v-title">🛡️ Sistema di Validazione Incrociata</strong>
-    <p id="v-descr">Il calcolo è basato sulla convergenza dei dati: la taglia è affidabile all'83% quando almeno due parametri (es. EU e UK) coincidono sulle tabelle ufficiali dei brand. Questa doppia conferma garantisce la scelta corretta.</p>
+    <p id="v-descr">Il calcolo è basato sulla convergenza dei dati ufficiali dei migliori brand. Specializzato per scarpe sportive: Running, Trekking, Volley e Basket.</p>
   </div>
 
   <p id="note" class="small" style="margin-top:20px;">Servizio offerto da Footly.fit</p>
