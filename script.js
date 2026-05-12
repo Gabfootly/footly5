@@ -1,6 +1,6 @@
 /* FOOTLY - Motore di calcolo B2B 2026
    Proprietà di Gabriele Sanzi
-   Logica: Calcolo Reale + Traduzione Differenziata (Landing B2B vs Consumer)
+   Logica: Calcolo Reale + Regola di Validazione 2 su 3
 */
 
 const dataUomo = [
@@ -142,13 +142,16 @@ function calcolaTaglia() {
 
     const tagliaConsigliata = lang === "en" ? "Recommended size:" : "Taglia consigliata:";
     const tipoPiedeTesto = lang === "en" ? "Foot type:" : "Tipo piede:";
+    const validationNote = lang === "en" 
+        ? "Verify: at least 2 sizes must match your current shoe label." 
+        : "Verifica: almeno 2 taglie devono corrispondere all'etichetta delle tue scarpe attuali.";
     
-    let htmlResult = `<div style="border:2px solid #27ae60; padding:15px; border-radius:10px; background:#f4fff8;"><p style="margin:0; font-size:0.9em; color:#555;">${tagliaConsigliata}</p><strong style="font-size:1.8em; color:#27ae60;">EU ${match.EU}</strong><br><span style="color:#333; font-weight:bold;">UK ${match.UK} | US ${match.US}</span><hr style="border:0; border-top:1px solid #c8e6d1; margin:10px 0;"><p style="margin:0; font-size:0.9em;">${tipoPiedeTesto} <strong>${notaPiede}</strong></p>`;
+    let htmlResult = `<div style="border:2px solid #27ae60; padding:15px; border-radius:10px; background:#f4fff8;"><p style="margin:0; font-size:0.9em; color:#555;">${tagliaConsigliata}</p><strong style="font-size:1.8em; color:#27ae60;">EU ${match.EU}</strong><br><span style="color:#333; font-weight:bold;">UK ${match.UK} | US ${match.US}</span><hr style="border:0; border-top:1px solid #c8e6d1; margin:10px 0;"><p style="margin:0; font-size:0.9em;">${tipoPiedeTesto} <strong>${notaPiede}</strong></p><p style="margin-top:8px; font-size:0.75em; color:#27ae60; font-style:italic; line-height:1.2;">${validationNote}</p>`;
 
     if (isLanding) {
         const promoText = lang === "en" 
-            ? "This is the result if 25.7 cm length and 10 cm width are entered. <br>See it live on: <a href='https://bfoutdoorshop.com/products/ultraventure-4-w?variant=51507061490006' target='_blank' style='color:#27ae60; font-weight:bold;'>BF Outdoor Shop</a>" 
-            : "Questo è il risultato se inserisci 25.7 cm di lunghezza e 10 cm di larghezza. <br>Vedi l'integrazione su: <a href='https://bfoutdoorshop.com/products/ultraventure-4-w?variant=51507061490006' target='_blank' style='color:#27ae60; font-weight:bold;'>BF Outdoor Shop</a>";
+            ? "This is a demo result. See it live on: <a href='https://bfoutdoorshop.com/products/ultraventure-4-w?variant=51507061490006' target='_blank' style='color:#27ae60; font-weight:bold;'>BF Outdoor Shop</a>" 
+            : "Questo è un risultato demo. Vedi l'integrazione su: <a href='https://bfoutdoorshop.com/products/ultraventure-4-w?variant=51507061490006' target='_blank' style='color:#27ae60; font-weight:bold;'>BF Outdoor Shop</a>";
         htmlResult += `<p style="margin-top:12px; font-size:0.75em; color:#666; border-top: 1px dashed #ccc; padding-top:8px; line-height:1.4;">${promoText}</p>`;
     }
     htmlResult += `</div>`;
@@ -188,7 +191,7 @@ function changeLanguage() {
             "lbl-how-to": "Come prendere le misure",
             "lbl-how-to-sub": "Misura entrambi i piedi e inserisci la misura del più lungo.",
             "v-title": "🛡️ Sistema di Validazione Incrociata",
-            "v-descr": "Il calcolo è basato sulla convergenza dei dati ufficiali dei brand. Specializzato per scarpe sportive: Running, Trekking, Volley e Basket."
+            "v-descr": "Il sistema confronta EU, UK e US: la taglia è esatta quando almeno 2 parametri su 3 coincidono con l'etichetta originale del brand. Questa 'Regola del 2 su 3' garantisce precisione totale per Running, Trekking, Volley e Basket."
         },
         en: {
             "main-title": "Reduce your e-commerce returns",
@@ -218,7 +221,7 @@ function changeLanguage() {
             "lbl-how-to": "How to take measurements",
             "lbl-how-to-sub": "Measure both feet and enter the size of the longest one.",
             "v-title": "🛡️ Cross-Validation System",
-            "v-descr": "The calculation is based on the convergence of official brand data. Specialized for sports shoes: Running, Hiking, Volleyball and Basketball."
+            "v-descr": "The system compares EU, UK, and US: the size is accurate when at least 2 out of 3 parameters match the brand's original label. This '2 out of 3 Rule' ensures total precision for Running, Hiking, Volleyball, and Basketball."
         }
     };
     
