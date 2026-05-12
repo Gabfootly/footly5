@@ -140,13 +140,32 @@ function calcolaTaglia() {
             : match.Tipo_piede;
     }
 
-    const tagliaConsigliata = lang === "en" ? "Recommended size:" : "Taglia consigliata:";
-    const tipoPiedeTesto = lang === "en" ? "Foot type:" : "Tipo piede:";
-    const validationNote = lang === "en" 
-        ? "Verify: at least 2 sizes must match your current shoe label." 
-        : "Verifica: almeno 2 taglie devono corrispondere all'etichetta delle tue scarpe attuali.";
-    
-    let htmlResult = `<div style="border:2px solid #27ae60; padding:15px; border-radius:10px; background:#f4fff8;"><p style="margin:0; font-size:0.9em; color:#555;">${tagliaConsigliata}</p><strong style="font-size:1.8em; color:#27ae60;">EU ${match.EU}</strong><br><span style="color:#333; font-weight:bold;">UK ${match.UK} | US ${match.US}</span><hr style="border:0; border-top:1px solid #c8e6d1; margin:10px 0;"><p style="margin:0; font-size:0.9em;">${tipoPiedeTesto} <strong>${notaPiede}</strong></p><p style="margin-top:8px; font-size:0.75em; color:#27ae60; font-style:italic; line-height:1.2;">${validationNote}</p>`;
+    // --- NUOVA LOGICA DI DOPPIA VERIFICA ---
+    const avvisoDoppiaVerifica = lang === "en" 
+        ? "<strong>Double Check:</strong> Ensure at least 2 out of 3 sizes (EU, UK, US) match the official size chart of the brand you are purchasing."
+        : "<strong>Doppia Verifica:</strong> Assicurati che almeno 2 taglie su 3 (EU, UK, US) corrispondano alla tabella taglie ufficiale del brand che stai per acquistare.";
+
+    let htmlResult = `
+        <div style="border:2px solid #27ae60; padding:20px; border-radius:12px; background:#f4fff8; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-top:20px;">
+            <p style="margin:0 0 15px 0; font-size:1em; color: #555; text-align:center; font-weight:bold;">
+                ${lang === 'en' ? 'YOUR RECOMMENDED SIZES:' : 'LE TUE TAGLIE CONSIGLIATE:'}
+            </p>
+            
+            <div style="display:flex; justify-content:space-around; align-items:center; margin-bottom:20px; text-align:center; background:white; padding:10px; border-radius:8px;">
+                <div style="flex:1; border-right:1px solid #eee;"><span style="display:block; font-size:0.75em; color:#666; font-weight:bold;">EU</span><strong style="font-size:1.6em; color:#27ae60;">${match.EU}</strong></div>
+                <div style="flex:1; border-right:1px solid #eee;"><span style="display:block; font-size:0.75em; color:#666; font-weight:bold;">UK</span><strong style="font-size:1.4em; color:#333;">${match.UK}</strong></div>
+                <div style="flex:1;"><span style="display:block; font-size:0.75em; color:#666; font-weight:bold;">US</span><strong style="font-size:1.4em; color:#333;">${match.US}</strong></div>
+            </div>
+
+            <p style="margin:0 0 15px 0; font-size:0.95em; text-align:center; border-bottom: 1px solid #eee; padding-bottom:10px;">
+                ${lang === 'en' ? 'Foot type:' : 'Tipo piede:'} <strong>${notaPiede}</strong>
+            </p>
+            
+            <div style="background: #fff; padding: 12px; border-radius: 8px; border: 1px dashed #27ae60;">
+                <p style="margin:0; font-size:0.85em; color:#444; line-height:1.4; text-align:left;">
+                    💡 ${avvisoDoppiaVerifica}
+                </p>
+            </div>`;
 
     if (isLanding) {
         const promoText = lang === "en" 
