@@ -76,7 +76,7 @@ const dataDonna = [
   {Tipo_piede: "Piede Molto largo", MinLunghezza: 25.1, MaxLunghezza: 25.4, MinLarghezza: 10.9, MaxLarghezza: 11.0, EU: "42 1/2 ( 42 2/3)", UK: 8.5, US: 10.0},
   {Tipo_piede: "Normale/stretto", MinLunghezza: 25.5, MaxLunghezza: 25.8, MinLarghezza: 9.55, MaxLarghezza: 10.7, EU: 42, UK: 8.0, US: 9.5},
   {Tipo_piede: "Piede largo", MinLunghezza: 25.5, MaxLunghezza: 25.8, MinLarghezza: 10.8, MaxLarghezza: 11.0, EU: "42 1/2 ( 42 2/3)", UK: 8.5, US: 10.0},
-  {Tipo_piede: "Normale/stretto", MinLunghezza: 25.9, MaxLunghezza: 26.3, MinLarghezza: 9.7, MaxLarghezza: 10.88, EU: "42  1/2 ( 42 2/3)", UK: 8.5, US: 10.0},
+  {Tipo_piede: "Normale/stretto", MinLunghezza: 25.9, MaxLunghezza: 26.3, MinLarghezza: 9.7, MaxLarghezza: 10.88, EU: "42 1/2 ( 42 2/3)", UK: 8.5, US: 10.0},
   {Tipo_piede: "Piede largo", MinLunghezza: 25.9, MaxLunghezza: 26.3, MinLarghezza: 10.9, MaxLarghezza: 11.1, EU: 43, UK: 9.0, US: 10.5},
   {Tipo_piede: "Piede Molto largo", MinLunghezza: 25.9, MaxLunghezza: 26.3, MinLarghezza: 11.1, MaxLarghezza: 11.2, EU: 44, UK: 9.5, US: 11.0},
   {Tipo_piede: "Normale/stretto", MinLunghezza: 26.4, MaxLunghezza: 26.7, MinLarghezza: 9.88, MaxLarghezza: 10.9, EU: "43 ( 43 1/3)", UK: 9.0, US: 10.5},
@@ -157,7 +157,7 @@ function calcolaTaglia() {
 
 function changeLanguage() {
     const lang = document.getElementById("language").value;
-    const isLanding = document.getElementById("demo-section") !== null; // Verifica se siamo sulla landing o sul consumer
+    const isLanding = document.getElementById("demo-section") !== null;
 
     const t = {
         it: {
@@ -171,7 +171,8 @@ function changeLanguage() {
             "feat3-p": "Si integra in 5 minuti su Shopify, WooCommerce o siti custom.",
             "demo-label": "DEMO ANTEPRIMA",
             "demo-title": isLanding ? "Esempio di integrazione" : "Calcola la tua taglia in 1 minuto",
-            "demo-sub": isLanding ? "Ecco come i tuoi clienti visualizzeranno Footly sul tuo sito:" : "Guarda il video, poi usa il misuratore qui sotto.",
+            "demo-sub": isLanding ? "Ecco come i tuoi clienti visualizzeranno Footly sul tuo sito:" : "Misuratore per scarpe sportive: Running, Trekking, Volley e Basket",
+            "demo-title-misure": "Inserisci le tue misure",
             "instr-title": "1. Istruzioni per il cliente",
             "calc-title": "2. Calcolatore dinamico",
             "lbl-gender": "Sesso",
@@ -184,11 +185,10 @@ function changeLanguage() {
             "cta-sub": "Scegli la precisione di Footly per i tuoi clienti.",
             "price-tag": "A partire da €29 / mese",
             "btn-contact": "CONTATTACI PER UNA PROVA",
-            // Consumer specific
             "lbl-how-to": "Come prendere le misure",
             "lbl-how-to-sub": "Misura entrambi i piedi e inserisci la misura del più lungo.",
             "v-title": "🛡️ Sistema di Validazione Incrociata",
-            "v-descr": "Il calcolo è basato sulla convergenza dei dati ufficiali dei brand."
+            "v-descr": "Il calcolo è basato sulla convergenza dei dati ufficiali dei brand. Specializzato per scarpe sportive: Running, Trekking, Volley e Basket."
         },
         en: {
             "main-title": "Reduce your e-commerce returns",
@@ -201,7 +201,8 @@ function changeLanguage() {
             "feat3-p": "Integrates in 5 minutes on Shopify, WooCommerce or custom sites.",
             "demo-label": "DEMO PREVIEW",
             "demo-title": isLanding ? "Integration Example" : "Calculate your size in 1 minute",
-            "demo-sub": isLanding ? "This is how your customers will see Footly on your site:" : "Watch the video, then use the calculator below.",
+            "demo-sub": isLanding ? "This is how your customers will see Footly on your site:" : "Measurement tool for sports shoes: Running, Hiking, Volleyball and Basketball",
+            "demo-title-misure": "Enter your measurements",
             "instr-title": "1. Customer Instructions",
             "calc-title": "2. Dynamic Calculator",
             "lbl-gender": "Gender",
@@ -214,11 +215,10 @@ function changeLanguage() {
             "cta-sub": "Choose Footly's precision for your customers.",
             "price-tag": "Starting at €29 / month",
             "btn-contact": "CONTACT US FOR A TRIAL",
-            // Consumer specific
             "lbl-how-to": "How to take measurements",
             "lbl-how-to-sub": "Measure both feet and enter the size of the longest one.",
             "v-title": "🛡️ Cross-Validation System",
-            "v-descr": "The calculation is based on the convergence of official brand data."
+            "v-descr": "The calculation is based on the convergence of official brand data. Specialized for sports shoes: Running, Hiking, Volleyball and Basketball."
         }
     };
     
