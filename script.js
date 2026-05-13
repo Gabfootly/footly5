@@ -140,32 +140,32 @@ function calcolaTaglia() {
             : match.Tipo_piede;
     }
 
-    // --- PULIZIA TAGLIA EU PER EVITARE TESTO ACAPO ---
-    // Sostituiamo gli spazi con &nbsp; (spazio che non va a capo)
-    let euDisplay = String(match.EU).replace(/\s/g, '&nbsp;');
-
     const avvisoDoppiaVerifica = lang === "en" 
         ? "<strong>Double Check:</strong> Ensure at least 2 out of 3 sizes match the official size chart."
         : "<strong>Doppia Verifica:</strong> Assicurati che almeno 2 taglie su 3 corrispondano alla tabella ufficiale.";
 
+    // --- NUOVA GRAFICA OTTIMIZZATA PER MOBILE ---
     let htmlResult = `
-        <div style="border:2px solid #27ae60; padding:20px; border-radius:12px; background:#f4fff8; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-top:20px;">
+        <div style="border:2px solid #27ae60; padding:15px; border-radius:12px; background:#f4fff8; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-top:20px;">
             <p style="margin:0 0 15px 0; font-size:1em; color: #555; text-align:center; font-weight:bold;">
                 ${lang === 'en' ? 'YOUR RECOMMENDED SIZES:' : 'LE TUE TAGLIE CONSIGLIATE:'}
             </p>
             
-            <div style="display:flex; justify-content:space-around; align-items:center; margin-bottom:20px; text-align:center; background:white; padding:10px; border-radius:8px;">
-                <div style="flex:1.5; border-right:1px solid #eee; overflow:hidden;">
-                    <span style="display:block; font-size:0.75em; color:#666; font-weight:bold;">EU</span>
-                    <strong style="font-size:1.3em; color:#27ae60; white-space:nowrap; display:block;">${euDisplay}</strong>
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
+                <div style="background:white; padding:12px; border-radius:8px; border:1px solid #eee; text-align:center;">
+                    <span style="font-size:0.8em; color:#666; font-weight:bold; display:block; margin-bottom:5px;">TAGLIA EU</span>
+                    <strong style="font-size:1.5em; color:#27ae60; display:block; line-height:1.2;">${match.EU}</strong>
                 </div>
-                <div style="flex:1; border-right:1px solid #eee;">
-                    <span style="display:block; font-size:0.75em; color:#666; font-weight:bold;">UK</span>
-                    <strong style="font-size:1.3em; color:#333;">${match.UK}</strong>
-                </div>
-                <div style="flex:1;">
-                    <span style="display:block; font-size:0.75em; color:#666; font-weight:bold;">US</span>
-                    <strong style="font-size:1.3em; color:#333;">${match.US}</strong>
+                
+                <div style="display: flex; gap: 10px;">
+                    <div style="flex:1; background:white; padding:10px; border-radius:8px; border:1px solid #eee; text-align:center;">
+                        <span style="font-size:0.75em; color:#666; font-weight:bold; display:block;">UK</span>
+                        <strong style="font-size:1.2em; color:#333;">${match.UK}</strong>
+                    </div>
+                    <div style="flex:1; background:white; padding:10px; border-radius:8px; border:1px solid #eee; text-align:center;">
+                        <span style="font-size:0.75em; color:#666; font-weight:bold; display:block;">US</span>
+                        <strong style="font-size:1.2em; color:#333;">${match.US}</strong>
+                    </div>
                 </div>
             </div>
 
@@ -181,8 +181,8 @@ function calcolaTaglia() {
 
     if (isLanding) {
         const promoText = lang === "en" 
-            ? "This is a demo result. See it live on: <a href='https://bfoutdoorshop.com/products/ultraventure-4-w?variant=51507061490006' target='_blank' style='color:#27ae60; font-weight:bold;'>BF Outdoor Shop</a>" 
-            : "Questo è un risultato demo. Vedi l'integrazione su: <a href='https://bfoutdoorshop.com/products/ultraventure-4-w?variant=51507061490006' target='_blank' style='color:#27ae60; font-weight:bold;'>BF Outdoor Shop</a>";
+            ? "See it live on: <a href='https://bfoutdoorshop.com/products/ultraventure-4-w' target='_blank' style='color:#27ae60; font-weight:bold;'>BF Outdoor Shop</a>" 
+            : "Vedi l'integrazione su: <a href='https://bfoutdoorshop.com/products/ultraventure-4-w' target='_blank' style='color:#27ae60; font-weight:bold;'>BF Outdoor Shop</a>";
         htmlResult += `<p style="margin-top:12px; font-size:0.75em; color:#666; border-top: 1px dashed #ccc; padding-top:8px; line-height:1.4;">${promoText}</p>`;
     }
     htmlResult += `</div>`;
