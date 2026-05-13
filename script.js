@@ -6,7 +6,7 @@
 const dataUomo = [
   {Tipo_piede: "Normale/stretto", MinLunghezza: 22.8, MaxLunghezza: 23.3, MinLarghezza: 8.7, MaxLarghezza: 9.5, EU: 38, UK: 5.0, US: 5.5},
   {Tipo_piede: "Piede largo", MinLunghezza: 22.8, MaxLunghezza: 23.3, MinLarghezza: 9.55, MaxLarghezza: 10.2, EU: "39 (39 1/3)", UK: 6.0, US: 6.5},
-  {Tipo_piede: "Normale/stretto", MinLunghezza: 23.4, MaxLunghezza: 23.7, MinLarghezza: 8.8, MaxLarghezza: 9.6, EU: "38 1/2 ( 38 2/3)", UK: 5.5, US: 6},
+  {Tipo_piede: "Normale/stretto", MinLunghezza: 23.4, MaxLunghezza: 23.7, MinLarghezza: 8.8, MaxLarghezza: 9.6, EU: "38 1/2 (38 2/3)", UK: 5.5, US: 6},
   {Tipo_piede: "Piede largo", MinLunghezza: 23.4, MaxLunghezza: 23.7, MinLarghezza: 9.65, MaxLarghezza: 10.4, EU: "39 (39 1/3)", UK: 6.0, US: 6.5},
   {Tipo_piede: "Normale/stretto", MinLunghezza: 23.75, MaxLunghezza: 24.1, MinLarghezza: 8.9, MaxLarghezza: 10.0, EU: "39 (39 1/3)", UK: 6.0, US: 6.5},
   {Tipo_piede: "Piede largo", MinLunghezza: 23.5, MaxLunghezza: 24.1, MinLarghezza: 10.0, MaxLarghezza: 10.5, EU: 40, UK: 6.5, US: 7},
@@ -18,27 +18,27 @@ const dataUomo = [
   {Tipo_piede: "Piede Molto largo", MinLunghezza: 24.2, MaxLunghezza: 24.5, MinLarghezza: 10.7, MaxLarghezza: 10.8, EU: 41.5, UK: 7.5, US: 8.5},
   {Tipo_piede: "Normale/stretto", MinLunghezza: 25.1, MaxLunghezza: 25.4, MinLarghezza: 9.25, MaxLarghezza: 10.4, EU: "41 (41 1/3)", UK: 7.5, US: 8.0},
   {Tipo_piede: "Piede largo", MinLunghezza: 25.1, MaxLunghezza: 25.4, MinLarghezza: 10.55, MaxLarghezza: 10.8, EU: 42, UK: 8.0, US: 8.5},
-  {Tipo_piede: "Piede Molto largo", MinLunghezza: 25.1, MaxLunghezza: 25.4, MinLarghezza: 10.9, MaxLarghezza: 11.0, EU: "42 1/2 ( 42 2/3)", UK: 8.5, US: 9.0},
+  {Tipo_piede: "Piede Molto largo", MinLunghezza: 25.1, MaxLunghezza: 25.4, MinLarghezza: 10.9, MaxLarghezza: 11.0, EU: "42 1/2 (42 2/3)", UK: 8.5, US: 9.0},
   {Tipo_piede: "Normale/stretto", MinLunghezza: 25.5, MaxLunghezza: 25.8, MinLarghezza: 9.55, MaxLarghezza: 10.7, EU: 42, UK: 8.0, US: 8.5},
-  {Tipo_piede: "Piede largo", MinLunghezza: 25.5, MaxLunghezza: 25.8, MinLarghezza: 10.8, MaxLarghezza: 11.0, EU: "42 1/2 ( 42 2/3)", UK: 8.5, US: 9.0},
-  {Tipo_piede: "Normale/stretto", MinLunghezza: 25.9, MaxLunghezza: 26.3, MinLarghezza: 9.7, MaxLarghezza: 10.88, EU: "42 1/2 ( 42 2/3)", UK: 8.5, US: 9.0},
+  {Tipo_piede: "Piede largo", MinLunghezza: 25.5, MaxLunghezza: 25.8, MinLarghezza: 10.8, MaxLarghezza: 11.0, EU: "42 1/2 (42 2/3)", UK: 8.5, US: 9.0},
+  {Tipo_piede: "Normale/stretto", MinLunghezza: 25.9, MaxLunghezza: 26.3, MinLarghezza: 9.7, MaxLarghezza: 10.88, EU: "42 1/2 (42 2/3)", UK: 8.5, US: 9.0},
   {Tipo_piede: "Piede largo", MinLunghezza: 25.9, MaxLunghezza: 26.3, MinLarghezza: 10.9, MaxLarghezza: 11.0, EU: 43, UK: 9.0, US: 9.5},
   {Tipo_piede: "Piede Molto largo", MinLunghezza: 25.9, MaxLunghezza: 26.3, MinLarghezza: 11.1, MaxLarghezza: 11.2, EU: 44, UK: 9.5, US: 10.0},
-  {Tipo_piede: "Normale/stretto", MinLunghezza: 26.4, MaxLunghezza: 26.7, MinLarghezza: 9.88, MaxLarghezza: 10.9, EU: "43 ( 43 1/3)", UK: 9.0, US: 9.5},
+  {Tipo_piede: "Normale/stretto", MinLunghezza: 26.4, MaxLunghezza: 26.7, MinLarghezza: 9.88, MaxLarghezza: 10.9, EU: "43 (43 1/3)", UK: 9.0, US: 9.5},
   {Tipo_piede: "Piede largo", MinLunghezza: 26.4, MaxLunghezza: 26.7, MinLarghezza: 11.0, MaxLarghezza: 11.2, EU: 44, UK: 9.5, US: 10.0},
   {Tipo_piede: "Piede Molto largo", MinLunghezza: 26.4, MaxLunghezza: 26.7, MinLarghezza: 11.1, MaxLarghezza: 11.2, EU: "44 1/2 (44 2/3)", UK: 10.0, US: 10.5},
   {Tipo_piede: "Normale/stretto", MinLunghezza: 26.75, MaxLunghezza: 27.0, MinLarghezza: 10.0, MaxLarghezza: 11.2, EU: 44, UK: 9.5, US: 10.0},
   {Tipo_piede: "Piede largo", MinLunghezza: 26.75, MaxLunghezza: 27.0, MinLarghezza: 11.3, MaxLarghezza: 11.4, EU: "44 1/2 (44 2/3)", UK: 10.0, US: 10.5},
-  {Tipo_piede: "Piede Molto largo", MinLunghezza: 26.75, MaxLunghezza: 27.0, MinLarghezza: 11.5, MaxLarghezza: 11.6, EU: "45 ( 45 1/3)", UK: 10.5, US: 11.0},
+  {Tipo_piede: "Piede Molto largo", MinLunghezza: 26.75, MaxLunghezza: 27.0, MinLarghezza: 11.5, MaxLarghezza: 11.6, EU: "45 (45 1/3)", UK: 10.5, US: 11.0},
   {Tipo_piede: "Normale/stretto", MinLunghezza: 27.1, MaxLunghezza: 27.5, MinLarghezza: 10.2, MaxLarghezza: 11.3, EU: "44 1/2 (44 2/3)", UK: 10.0, US: 10.5},
-  {Tipo_piede: "Piede largo", MinLunghezza: 27.1, MaxLunghezza: 27.5, MinLarghezza: 11.4, MaxLarghezza: 11.5, EU: "45 ( 45 1/3)", UK: 10.5, US: 11.0},
+  {Tipo_piede: "Piede largo", MinLunghezza: 27.1, MaxLunghezza: 27.5, MinLarghezza: 11.4, MaxLarghezza: 11.5, EU: "45 (45 1/3)", UK: 10.5, US: 11.0},
   {Tipo_piede: "Piede Molto largo", MinLunghezza: 27.1, MaxLunghezza: 27.5, MinLarghezza: 11.52, MaxLarghezza: 11.6, EU: 45.5, UK: 11.0, US: 11.5},
   {Tipo_piede: "Normale/stretto", MinLunghezza: 27.6, MaxLunghezza: 27.9, MinLarghezza: 10.4, MaxLarghezza: 11.5, EU: 45, UK: 10.5, US: 11.0},
   {Tipo_piede: "Piede largo", MinLunghezza: 27.6, MaxLunghezza: 27.9, MinLarghezza: 11.6, MaxLarghezza: 11.7, EU: 45.5, UK: 11.0, US: 11.5},
   {Tipo_piede: "Piede Molto largo", MinLunghezza: 27.6, MaxLunghezza: 27.9, MinLarghezza: 11.72, MaxLarghezza: 11.8, EU: 46, UK: 11.0, US: 11.5},
   {Tipo_piede: "Normale/stretto", MinLunghezza: 28.0, MaxLunghezza: 28.3, MinLarghezza: 10.6, MaxLarghezza: 11.6, EU: 46, UK: 11.0, US: 11.5},
-  {Tipo_piede: "Piede largo", MinLunghezza: 28.0, MaxLunghezza: 28.3, MinLarghezza: 11.65, MaxLarghezza: 11.78, EU: "46 1/2 ( 46 2/3)", UK: 11.5, US: 12.0},
-  {Tipo_piede: "Normale/stretto", MinLunghezza: 28.4, MaxLunghezza: 28.7, MinLarghezza: 10.7, MaxLarghezza: 11.8, EU: "46 1/2 ( 46 2/3)", UK: 11.5, US: 12.0},
+  {Tipo_piede: "Piede largo", MinLunghezza: 28.0, MaxLunghezza: 28.3, MinLarghezza: 11.65, MaxLarghezza: 11.78, EU: "46 1/2 (46 2/3)", UK: 11.5, US: 12.0},
+  {Tipo_piede: "Normale/stretto", MinLunghezza: 28.4, MaxLunghezza: 28.7, MinLarghezza: 10.7, MaxLarghezza: 11.8, EU: "46 1/2 (46 2/3)", UK: 11.5, US: 12.0},
   {Tipo_piede: "Piede largo", MinLunghezza: 28.4, MaxLunghezza: 28.7, MinLarghezza: 11.85, MaxLarghezza: 12.0, EU: "47 (47 1/3)", UK: 12.0, US: 12.5},
   {Tipo_piede: "Normale/stretto", MinLunghezza: 28.8, MaxLunghezza: 29.2, MinLarghezza: 10.8, MaxLarghezza: 12.05, EU: "47 (47 1/3)", UK: 12.0, US: 12.5},
   {Tipo_piede: "Piede largo", MinLunghezza: 28.8, MaxLunghezza: 29.2, MinLarghezza: 12.07, MaxLarghezza: 12.2, EU: "47 1/2 (48)", UK: 12.5, US: 13.0},
@@ -54,14 +54,14 @@ const dataUomo = [
 
 const dataDonna = [
   {Tipo_piede: "Normale/stretto", MinLunghezza: 22.0, MaxLunghezza: 22.0, MinLarghezza: 8.3, MaxLarghezza: 9.1, EU: 36, UK: 3.5, US: 5.0},
-  {Tipo_piede: "Piede largo", MinLunghezza: 22.0, MaxLunghezza: 22.0, MinLarghezza: 9.15, MaxLarghezza: 9.6, EU: "37 ( 37 1/3)", UK: 4.5, US: 6.0},
-  {Tipo_piede: "Normale/stretto", MinLunghezza: 22.1, MaxLunghezza: 22.5, MinLarghezza: 8.5, MaxLarghezza: 9.3, EU: "36 1/2 ( 36 2/3)", UK: 4.0, US: 5.5},
+  {Tipo_piede: "Piede largo", MinLunghezza: 22.0, MaxLunghezza: 22.0, MinLarghezza: 9.15, MaxLarghezza: 9.6, EU: "37 (37 1/3)", UK: 4.5, US: 6.0},
+  {Tipo_piede: "Normale/stretto", MinLunghezza: 22.1, MaxLunghezza: 22.5, MinLarghezza: 8.5, MaxLarghezza: 9.3, EU: "36 1/2 (36 2/3)", UK: 4.0, US: 5.5},
   {Tipo_piede: "Piede largo", MinLunghezza: 22.1, MaxLunghezza: 22.5, MinLarghezza: 9.35, MaxLarghezza: 9.8, EU: 38, UK: 5.0, US: 6.5},
   {Tipo_piede: "Normale/stretto", MinLunghezza: 22.6, MaxLunghezza: 22.6, MinLarghezza: 8.6, MaxLarghezza: 9.4, EU: "37 (37 1/3)", UK: 4.5, US: 6.0},
-  {Tipo_piede: "Piede largo", MinLunghezza: 22.6, MaxLunghezza: 22.7, MinLarghezza: 9.45, MaxLarghezza: 10.0, EU: "38 1/2 ( 38 2/3)", UK: 5.5, US: 7.0},
+  {Tipo_piede: "Piede largo", MinLunghezza: 22.6, MaxLunghezza: 22.7, MinLarghezza: 9.45, MaxLarghezza: 10.0, EU: "38 1/2 (38 2/3)", UK: 5.5, US: 7.0},
   {Tipo_piede: "Normale/stretto", MinLunghezza: 22.8, MaxLunghezza: 23.3, MinLarghezza: 8.7, MaxLarghezza: 9.5, EU: 38, UK: 5.0, US: 6.5},
   {Tipo_piede: "Piede largo", MinLunghezza: 22.8, MaxLunghezza: 23.3, MinLarghezza: 9.55, MaxLarghezza: 10.2, EU: "39 (39 1/3)", UK: 6.0, US: 7.5},
-  {Tipo_piede: "Normale/stretto", MinLunghezza: 23.4, MaxLunghezza: 23.7, MinLarghezza: 8.8, MaxLarghezza: 9.6, EU: "38 1/2 ( 38 2/3)", UK: 5.5, US: 7.0},
+  {Tipo_piede: "Normale/stretto", MinLunghezza: 23.4, MaxLunghezza: 23.7, MinLarghezza: 8.8, MaxLarghezza: 9.6, EU: "38 1/2 (38 2/3)", UK: 5.5, US: 7.0},
   {Tipo_piede: "Piede largo", MinLunghezza: 23.4, MaxLunghezza: 23.7, MinLarghezza: 9.65, MaxLarghezza: 10.4, EU: "39 (39 1/3)", UK: 6.0, US: 7.5},
   {Tipo_piede: "Normale/stretto", MinLunghezza: 23.75, MaxLunghezza: 24.1, MinLarghezza: 8.9, MaxLarghezza: 10.0, EU: "39 (39 1/3)", UK: 6.0, US: 7.5},
   {Tipo_piede: "Piede largo", MinLunghezza: 23.5, MaxLunghezza: 24.1, MinLarghezza: 10.0, MaxLarghezza: 10.5, EU: 40, UK: 6.5, US: 8.0},
@@ -73,18 +73,18 @@ const dataDonna = [
   {Tipo_piede: "Piede Molto largo", MinLunghezza: 24.2, MaxLunghezza: 24.5, MinLarghezza: 10.7, MaxLarghezza: 10.8, EU: 41.5, UK: 7.6, US: 9.3},
   {Tipo_piede: "Normale/stretto", MinLunghezza: 25.1, MaxLunghezza: 25.4, MinLarghezza: 9.25, MaxLarghezza: 10.4, EU: "41 (41 1/3)", UK: 7.5, US: 9.0},
   {Tipo_piede: "Piede largo", MinLunghezza: 25.1, MaxLunghezza: 25.4, MinLarghezza: 10.55, MaxLarghezza: 10.8, EU: 42, UK: 8.0, US: 9.5},
-  {Tipo_piede: "Piede Molto largo", MinLunghezza: 25.1, MaxLunghezza: 25.4, MinLarghezza: 10.9, MaxLarghezza: 11.0, EU: "42 1/2 ( 42 2/3)", UK: 8.5, US: 10.0},
+  {Tipo_piede: "Piede Molto largo", MinLunghezza: 25.1, MaxLunghezza: 25.4, MinLarghezza: 10.9, MaxLarghezza: 11.0, EU: "42 1/2 (42 2/3)", UK: 8.5, US: 10.0},
   {Tipo_piede: "Normale/stretto", MinLunghezza: 25.5, MaxLunghezza: 25.8, MinLarghezza: 9.55, MaxLarghezza: 10.7, EU: 42, UK: 8.0, US: 9.5},
-  {Tipo_piede: "Piede largo", MinLunghezza: 25.5, MaxLunghezza: 25.8, MinLarghezza: 10.8, MaxLarghezza: 11.0, EU: "42 1/2 ( 42 2/3)", UK: 8.5, US: 10.0},
-  {Tipo_piede: "Normale/stretto", MinLunghezza: 25.9, MaxLunghezza: 26.3, MinLarghezza: 9.7, MaxLarghezza: 10.88, EU: "42 1/2 ( 42 2/3)", UK: 8.5, US: 10.0},
+  {Tipo_piede: "Piede largo", MinLunghezza: 25.5, MaxLunghezza: 25.8, MinLarghezza: 10.8, MaxLarghezza: 11.0, EU: "42 1/2 (42 2/3)", UK: 8.5, US: 10.0},
+  {Tipo_piede: "Normale/stretto", MinLunghezza: 25.9, MaxLunghezza: 26.3, MinLarghezza: 9.7, MaxLarghezza: 10.88, EU: "42 1/2 (42 2/3)", UK: 8.5, US: 10.0},
   {Tipo_piede: "Piede largo", MinLunghezza: 25.9, MaxLunghezza: 26.3, MinLarghezza: 10.9, MaxLarghezza: 11.1, EU: 43, UK: 9.0, US: 10.5},
   {Tipo_piede: "Piede Molto largo", MinLunghezza: 25.9, MaxLunghezza: 26.3, MinLarghezza: 11.1, MaxLarghezza: 11.2, EU: 44, UK: 9.5, US: 11.0},
-  {Tipo_piede: "Normale/stretto", MinLunghezza: 26.4, MaxLunghezza: 26.7, MinLarghezza: 9.88, MaxLarghezza: 10.9, EU: "43 ( 43 1/3)", UK: 9.0, US: 10.5},
+  {Tipo_piede: "Normale/stretto", MinLunghezza: 26.4, MaxLunghezza: 26.7, MinLarghezza: 9.88, MaxLarghezza: 10.9, EU: "43 (43 1/3)", UK: 9.0, US: 10.5},
   {Tipo_piede: "Piede largo", MinLunghezza: 26.4, MaxLunghezza: 26.7, MinLarghezza: 11.0, MaxLarghezza: 11.2, EU: 44, UK: 9.5, US: 11.0},
   {Tipo_piede: "Piede Molto largo", MinLunghezza: 26.4, MaxLunghezza: 26.7, MinLarghezza: 11.1, MaxLarghezza: 11.2, EU: "44 1/2 (44 2/3)", UK: 10.0, US: 11.5},
   {Tipo_piede: "Normale/stretto", MinLunghezza: 26.75, MaxLunghezza: 27.0, MinLarghezza: 10.0, MaxLarghezza: 11.2, EU: 44, UK: 9.5, US: 11.0},
   {Tipo_piede: "Piede largo", MinLunghezza: 26.75, MaxLunghezza: 27.0, MinLarghezza: 11.3, MaxLarghezza: 11.4, EU: "44 1/2 (44 2/3)", UK: 10.0, US: 11.5},
-  {Tipo_piede: "Piede Molto largo", MinLunghezza: 26.75, MaxLunghezza: 27.0, MinLarghezza: 11.5, MaxLarghezza: 11.6, EU: "45 ( 45 1/3)", UK: 10.5, US: 12.0},
+  {Tipo_piede: "Piede Molto largo", MinLunghezza: 26.75, MaxLunghezza: 27.0, MinLarghezza: 11.5, MaxLarghezza: 11.6, EU: "45 (45 1/3)", UK: 10.5, US: 12.0},
 ];
 
 function calcolaTaglia() {
@@ -140,10 +140,13 @@ function calcolaTaglia() {
             : match.Tipo_piede;
     }
 
-    // --- NUOVA LOGICA DI DOPPIA VERIFICA ---
+    // --- PULIZIA TAGLIA EU PER EVITARE TESTO ACAPO ---
+    // Sostituiamo gli spazi con &nbsp; (spazio che non va a capo)
+    let euDisplay = String(match.EU).replace(/\s/g, '&nbsp;');
+
     const avvisoDoppiaVerifica = lang === "en" 
-        ? "<strong>Double Check:</strong> Ensure at least 2 out of 3 sizes (EU, UK, US) match the official size chart of the brand you are purchasing."
-        : "<strong>Doppia Verifica:</strong> Assicurati che almeno 2 taglie su 3 (EU, UK, US) corrispondano alla tabella taglie ufficiale del brand che stai per acquistare.";
+        ? "<strong>Double Check:</strong> Ensure at least 2 out of 3 sizes match the official size chart."
+        : "<strong>Doppia Verifica:</strong> Assicurati che almeno 2 taglie su 3 corrispondano alla tabella ufficiale.";
 
     let htmlResult = `
         <div style="border:2px solid #27ae60; padding:20px; border-radius:12px; background:#f4fff8; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-top:20px;">
@@ -152,9 +155,18 @@ function calcolaTaglia() {
             </p>
             
             <div style="display:flex; justify-content:space-around; align-items:center; margin-bottom:20px; text-align:center; background:white; padding:10px; border-radius:8px;">
-                <div style="flex:1; border-right:1px solid #eee;"><span style="display:block; font-size:0.75em; color:#666; font-weight:bold;">EU</span><strong style="font-size:1.6em; color:#27ae60;">${match.EU}</strong></div>
-                <div style="flex:1; border-right:1px solid #eee;"><span style="display:block; font-size:0.75em; color:#666; font-weight:bold;">UK</span><strong style="font-size:1.4em; color:#333;">${match.UK}</strong></div>
-                <div style="flex:1;"><span style="display:block; font-size:0.75em; color:#666; font-weight:bold;">US</span><strong style="font-size:1.4em; color:#333;">${match.US}</strong></div>
+                <div style="flex:1.5; border-right:1px solid #eee; overflow:hidden;">
+                    <span style="display:block; font-size:0.75em; color:#666; font-weight:bold;">EU</span>
+                    <strong style="font-size:1.3em; color:#27ae60; white-space:nowrap; display:block;">${euDisplay}</strong>
+                </div>
+                <div style="flex:1; border-right:1px solid #eee;">
+                    <span style="display:block; font-size:0.75em; color:#666; font-weight:bold;">UK</span>
+                    <strong style="font-size:1.3em; color:#333;">${match.UK}</strong>
+                </div>
+                <div style="flex:1;">
+                    <span style="display:block; font-size:0.75em; color:#666; font-weight:bold;">US</span>
+                    <strong style="font-size:1.3em; color:#333;">${match.US}</strong>
+                </div>
             </div>
 
             <p style="margin:0 0 15px 0; font-size:0.95em; text-align:center; border-bottom: 1px solid #eee; padding-bottom:10px;">
