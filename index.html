@@ -18,8 +18,21 @@
         .logo { max-width: 180px; margin-bottom: 20px; }
         h1 { color: #1a1a1a; font-size: 2.2em; margin-bottom: 10px; }
         .subtitle { font-size: 1.2em; color: #666; margin-bottom: 30px; text-align: center; }
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 15px; background: #000; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        
+        /* AGGIORNATO PER VIDEO VERTICALE */
+        .video-container { 
+            position: relative; 
+            padding-bottom: 125%; /* Rapporto per video verticale smartphone */
+            height: 0; 
+            overflow: hidden; 
+            border-radius: 15px; 
+            background: #000; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
+            max-width: 400px; /* Evita che su PC diventi troppo alto */
+            margin: 0 auto; 
+        }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        
         .features { display: flex; flex-wrap: wrap; gap: 20px; margin: 40px 0; text-align: center; justify-content: center; }
         .feature-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); flex: 1; min-width: 200px; box-sizing: border-box; }
         .feature-card h3 { color: #27ae60; margin-top: 0; }
@@ -62,7 +75,11 @@
     </header>
 
     <div class="video-container">
-        <iframe src="https://player.vimeo.com/video/1158228058?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/1191600569?badge=0&autopause=0&player_id=0&app_id=58479" 
+                frameborder="0" 
+                allow="autoplay; fullscreen; picture-in-picture" 
+                allowfullscreen 
+                title="Tutorial Footly"></iframe>
     </div>
 
     <div class="features">
