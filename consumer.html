@@ -6,7 +6,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-M21P1GB9ZE');
 </script>
 
@@ -25,7 +24,18 @@
     #result { margin-top:20px; font-size:1.2em; font-weight:bold; text-align:center; color: #2c3e50; }
     .small { font-size:0.9em; color:#666; text-align:center; }
     
-    .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius:10px; margin-bottom:20px; }
+    /* AGGIORNATO PER VIDEO VERTICALE */
+    .video-wrapper { 
+        position: relative; 
+        padding-bottom: 125%; /* Rapporto verticale 4:5 / smartphone */
+        height: 0; 
+        overflow: hidden; 
+        border-radius: 10px; 
+        margin-bottom: 20px; 
+        max-width: 400px; /* Impedisce che diventi troppo alto su desktop */
+        margin-left: auto;
+        margin-right: auto;
+    }
     .video-wrapper iframe { position:absolute; top:0; left:0; width:100%; height:100%; }
 
     img { 
@@ -91,10 +101,11 @@
 
   <div class="video-wrapper">
     <iframe
-      src="https://player.vimeo.com/video/1158228058"
+      src="https://player.vimeo.com/video/1191600569?badge=0&autopause=0&player_id=0&app_id=58479"
       frameborder="0"
       allow="autoplay; fullscreen; picture-in-picture"
-      allowfullscreen>
+      allowfullscreen
+      title="Tutorial Misurazione">
     </iframe>
   </div>
 
