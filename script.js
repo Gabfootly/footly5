@@ -188,3 +188,82 @@ function calcolaTaglia() {
 
     risultato.innerHTML = htmlResult;
 }
+
+function changeLanguage() {
+    const lang = document.getElementById("language").value;
+    const isLanding = document.getElementById("demo-section") !== null;
+
+    const t = {
+        it: {
+            "main-title": "Riduci i resi del tuo e-commerce",
+            "main-sub": "La soluzione plug-and-play per far scegliere ai tuoi clienti la taglia perfetta.",
+            "feat1-t": "-30% Resi",
+            "feat1-p": "Elimina l'incertezza della taglia e abbatti i costi logistici.",
+            "feat2-t": "+Conversioni",
+            "feat2-p": "Aumenta la fiducia del cliente e riduci i carrelli abbandonati.",
+            "feat3-t": "Plug & Play",
+            "feat3-p": "Si integra in 5 minutes su Shopify, WooCommerce o siti custom.",
+            "demo-label": "DEMO ANTEPRIMA",
+            "demo-title": isLanding ? "Esempio di integrazione" : "Calcola la tua taglia in 1 minuto",
+            "demo-sub": isLanding ? "Ecco come i tuoi clienti visualizzeranno Footly sul tuo sito:" : "Misuratore per scarpe sportive: Running, Trekking, Volley e Basket",
+            "demo-title-misure": "Inserisci le tue misure",
+            "instr-title": "1. Istruzioni per il cliente",
+            "calc-title": "2. Calcolatore dinamico",
+            "lbl-gender": "Sesso",
+            "opt-male": "Uomo",
+            "opt-female": "Donna",
+            "lbl-length": "Lunghezza piede (cm)",
+            "lbl-width": "Larghezza piede (cm)",
+            "calculate-button": "CALCOLA TAGLIA",
+            "cta-title": "Pronto a ottimizzare il tuo store?",
+            "cta-sub": "Scegli la precisione di Footly per i tuoi clienti.",
+            "price-tag": "A partire da €29 / mese",
+            "btn-contact": "CONTATTACI PER UNA PROVA",
+            "lbl-how-to": "Come prendere le misure",
+            "lbl-how-to-sub": "Misura entrambi i piedi e inserisci la misura del più lungo.",
+            "v-title": "🛡️ Sistema di Validazione Incrociata",
+            "v-descr": "Il sistema confronta EU, UK e US: la taglia è esatta quando almeno 2 parametri su 3 coincidono con l'etichetta originale del brand. Questa 'Regola del 2 su 3' garantisce precisione totale per Running, Trekking, Volley e Basket.",
+            "demo-note-lang": "Nota: Per ragioni di demo, questo simulatore è abilitato solo per lunghezze tra 24.5 e 27.5 cm (Taglie EU 39-43)."
+        },
+        en: {
+            "main-title": "Reduce your e-commerce returns",
+            "main-sub": "The plug-and-play solution for the perfect size.",
+            "feat1-t": "-30% Returns",
+            "feat1-p": "Eliminate size uncertainty and cut logistics costs.",
+            "feat2-t": "+Conversions",
+            "feat2-p": "Increase customer confidence and reduce abandoned carts.",
+            "feat3-t": "Plug & Play",
+            "feat3-p": "Integrates in 5 minutes on Shopify, WooCommerce or custom sites.",
+            "demo-label": "DEMO PREVIEW",
+            "demo-title": isLanding ? "Integration Example" : "Calculate your size in 1 minute",
+            "demo-sub": isLanding ? "This is how your customers will see Footly on your site:" : "Measurement tool for sports shoes: Running, Hiking, Volleyball and Basketball",
+            "demo-title-misure": "Enter your measurements",
+            "instr-title": "1. Customer Instructions",
+            "calc-title": "2. Dynamic Calculator",
+            "lbl-gender": "Gender",
+            "opt-male": "Male",
+            "opt-female": "Female",
+            "lbl-length": "Foot length (cm)",
+            "lbl-width": "Foot width (cm)",
+            "calculate-button": "CALCULATE SIZE",
+            "cta-title": "Ready to optimize your store?",
+            "cta-sub": "Choose Footly's precision for your customers.",
+            "price-tag": "Starting at €29 / month",
+            "btn-contact": "CONTACT US FOR A TRIAL",
+            "lbl-how-to": "How to take measurements",
+            "lbl-how-to-sub": "Measure both feet and enter the size of the longest one.",
+            "v-title": "🛡️ Cross-Validation System",
+            "v-descr": "The system compares EU, UK, and US: the size is accurate when at least 2 out of 3 parameters match the brand's original label. This '2 out of 3 Rule' ensures total precision for Running, Hiking, Volleyball, and Basketball.",
+            "demo-note-lang": "Note: For demo purposes, this simulator is only enabled for lengths between 24.5 and 27.5 cm (EU Sizes 39-43)."
+        }
+    };
+    
+    const sel = t[lang];
+    for (let id in sel) {
+        const el = document.getElementById(id);
+        if (el) { el.innerText = sel[id]; }
+    }
+    
+    const res = document.getElementById("result");
+    if(res) res.innerHTML = "";
+}
