@@ -104,13 +104,25 @@ function calcolaTaglia() {
         return;
     }
 
+    // --- RANGE DEMO AGGIORNATO (39-43) ---
     if (isLanding) {
-        if (lunghezza < 24 || lunghezza > 26) {
+        if (lunghezza < 24.5 || lunghezza > 27.5) {
             const demoMsg = lang === "en" 
-                ? "<strong>DEMO LIMIT:</strong> To test the algorithm on all sizes, check the live integration on this store:" 
-                : "<strong>LIMITE DEMO:</strong> Per testare l'algoritmo completo su ogni taglia, guarda l'integrazione live qui:";
+                ? "<strong>DEMO MODE:</strong> This preview is limited to <strong>EU sizes 39 to 43</strong> (24.5cm - 27.5cm) to protect the full algorithm. To see Footly in action on all sizes, visit our partner store:" 
+                : "<strong>MODALITÀ DEMO:</strong> Questa anteprima è limitata alle <strong>taglie EU 39-43</strong> (24.5cm - 27.5cm) per proteggere l'algoritmo completo. Per testare tutte le taglie, guarda l'integrazione live qui:";
+            
             const btnText = lang === "en" ? "VIEW LIVE ON STORE" : "VEDI LIVE SULLO STORE";
-            risultato.innerHTML = `<div style="border:2px dashed #e67e22; padding:15px; border-radius:10px; background:#fff9f4; text-align:center;"><p style="margin:0 0 12px 0; font-size:0.85em; color:#d35400; line-height:1.4;">${demoMsg}</p><a href="https://bfoutdoorshop.com/products/ultraventure-4-w?variant=51507061490006" target="_blank" style="display:inline-block; background:#27ae60; color:white; padding:10px 18px; border-radius:5px; text-decoration:none; font-weight:bold; font-size:0.8em; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">${btnText}</a></div>`;
+            
+            risultato.innerHTML = `
+                <div style="border:2px dashed #e67e22; padding:15px; border-radius:12px; background:#fff9f4; text-align:center;">
+                    <p style="margin:0 0 12px 0; font-size:0.9em; color:#d35400; line-height:1.4;">
+                        ${demoMsg}
+                    </p>
+                    <a href="https://bfoutdoorshop.com/products/ultraventure-4-w" target="_blank" 
+                       style="display:inline-block; background:#27ae60; color:white; padding:10px 18px; border-radius:5px; text-decoration:none; font-weight:bold; font-size:0.8em;">
+                        ${btnText}
+                    </a>
+                </div>`;
             return;
         }
     }
@@ -144,124 +156,35 @@ function calcolaTaglia() {
         ? "<strong>Double Check:</strong> Ensure at least 2 out of 3 sizes match the official size chart."
         : "<strong>Doppia Verifica:</strong> Assicurati che almeno 2 taglie su 3 corrispondano alla tabella ufficiale.";
 
-    // --- NUOVA GRAFICA OTTIMIZZATA PER MOBILE ---
+    // --- GRAFICA MOBILE-FRIENDLY (EU SOPRA, ALTRI SOTTO) ---
     let htmlResult = `
-        <div style="border:2px solid #27ae60; padding:15px; border-radius:12px; background:#f4fff8; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-top:20px;">
-            <p style="margin:0 0 15px 0; font-size:1em; color: #555; text-align:center; font-weight:bold;">
+        <div style="border:2px solid #27ae60; padding:15px; border-radius:12px; background:#f4fff8; margin-top:20px;">
+            <p style="margin:0 0 15px 0; font-size:0.9em; color: #555; text-align:center; font-weight:bold;">
                 ${lang === 'en' ? 'YOUR RECOMMENDED SIZES:' : 'LE TUE TAGLIE CONSIGLIATE:'}
             </p>
-            
             <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
                 <div style="background:white; padding:12px; border-radius:8px; border:1px solid #eee; text-align:center;">
                     <span style="font-size:0.8em; color:#666; font-weight:bold; display:block; margin-bottom:5px;">TAGLIA EU</span>
-                    <strong style="font-size:1.5em; color:#27ae60; display:block; line-height:1.2;">${match.EU}</strong>
+                    <strong style="font-size:1.4em; color:#27ae60; display:block; line-height:1.2;">${match.EU}</strong>
                 </div>
-                
                 <div style="display: flex; gap: 10px;">
                     <div style="flex:1; background:white; padding:10px; border-radius:8px; border:1px solid #eee; text-align:center;">
                         <span style="font-size:0.75em; color:#666; font-weight:bold; display:block;">UK</span>
-                        <strong style="font-size:1.2em; color:#333;">${match.UK}</strong>
+                        <strong style="font-size:1.1em; color:#333;">${match.UK}</strong>
                     </div>
                     <div style="flex:1; background:white; padding:10px; border-radius:8px; border:1px solid #eee; text-align:center;">
                         <span style="font-size:0.75em; color:#666; font-weight:bold; display:block;">US</span>
-                        <strong style="font-size:1.2em; color:#333;">${match.US}</strong>
+                        <strong style="font-size:1.1em; color:#333;">${match.US}</strong>
                     </div>
                 </div>
             </div>
-
-            <p style="margin:0 0 15px 0; font-size:0.95em; text-align:center; border-bottom: 1px solid #eee; padding-bottom:10px;">
+            <p style="margin:0 0 15px 0; font-size:0.9em; text-align:center; border-bottom: 1px solid #eee; padding-bottom:10px;">
                 ${lang === 'en' ? 'Foot type:' : 'Tipo piede:'} <strong>${notaPiede}</strong>
             </p>
-            
-            <div style="background: #fff; padding: 12px; border-radius: 8px; border: 1px dashed #27ae60;">
-                <p style="margin:0; font-size:0.85em; color:#444; line-height:1.4; text-align:left;">
-                    💡 ${avvisoDoppiaVerifica}
-                </p>
-            </div>`;
+            <div style="background: #fff; padding: 10px; border-radius: 8px; border: 1px dashed #27ae60;">
+                <p style="margin:0; font-size:0.8em; color:#444; line-height:1.4;">💡 ${avvisoDoppiaVerifica}</p>
+            </div>
+        </div>`;
 
-    if (isLanding) {
-        const promoText = lang === "en" 
-            ? "See it live on: <a href='https://bfoutdoorshop.com/products/ultraventure-4-w' target='_blank' style='color:#27ae60; font-weight:bold;'>BF Outdoor Shop</a>" 
-            : "Vedi l'integrazione su: <a href='https://bfoutdoorshop.com/products/ultraventure-4-w' target='_blank' style='color:#27ae60; font-weight:bold;'>BF Outdoor Shop</a>";
-        htmlResult += `<p style="margin-top:12px; font-size:0.75em; color:#666; border-top: 1px dashed #ccc; padding-top:8px; line-height:1.4;">${promoText}</p>`;
-    }
-    htmlResult += `</div>`;
     risultato.innerHTML = htmlResult;
-}
-
-function changeLanguage() {
-    const lang = document.getElementById("language").value;
-    const isLanding = document.getElementById("demo-section") !== null;
-
-    const t = {
-        it: {
-            "main-title": "Riduci i resi del tuo e-commerce",
-            "main-sub": "La soluzione plug-and-play per far scegliere ai tuoi clienti la taglia perfetta.",
-            "feat1-t": "-30% Resi",
-            "feat1-p": "Elimina l'incertezza della taglia e abbatti i costi logistici.",
-            "feat2-t": "+Conversioni",
-            "feat2-p": "Aumenta la fiducia del cliente e riduci i carrelli abbandonati.",
-            "feat3-t": "Plug & Play",
-            "feat3-p": "Si integra in 5 minuti su Shopify, WooCommerce o siti custom.",
-            "demo-label": "DEMO ANTEPRIMA",
-            "demo-title": isLanding ? "Esempio di integrazione" : "Calcola la tua taglia in 1 minuto",
-            "demo-sub": isLanding ? "Ecco come i tuoi clienti visualizzeranno Footly sul tuo sito:" : "Misuratore per scarpe sportive: Running, Trekking, Volley e Basket",
-            "demo-title-misure": "Inserisci le tue misure",
-            "instr-title": "1. Istruzioni per il cliente",
-            "calc-title": "2. Calcolatore dinamico",
-            "lbl-gender": "Sesso",
-            "opt-male": "Uomo",
-            "opt-female": "Donna",
-            "lbl-length": "Lunghezza piede (cm)",
-            "lbl-width": "Larghezza piede (cm)",
-            "calculate-button": "CALCOLA TAGLIA",
-            "cta-title": "Pronto a ottimizzare il tuo store?",
-            "cta-sub": "Scegli la precisione di Footly per i tuoi clienti.",
-            "price-tag": "A partire da €29 / mese",
-            "btn-contact": "CONTATTACI PER UNA PROVA",
-            "lbl-how-to": "Come prendere le misure",
-            "lbl-how-to-sub": "Misura entrambi i piedi e inserisci la misura del più lungo.",
-            "v-title": "🛡️ Sistema di Validazione Incrociata",
-            "v-descr": "Il sistema confronta EU, UK e US: la taglia è esatta quando almeno 2 parametri su 3 coincidono con l'etichetta originale del brand. Questa 'Regola del 2 su 3' garantisce precisione totale per Running, Trekking, Volley e Basket."
-        },
-        en: {
-            "main-title": "Reduce your e-commerce returns",
-            "main-sub": "The plug-and-play solution for the perfect size.",
-            "feat1-t": "-30% Returns",
-            "feat1-p": "Eliminate size uncertainty and cut logistics costs.",
-            "feat2-t": "+Conversions",
-            "feat2-p": "Increase customer confidence and reduce abandoned carts.",
-            "feat3-t": "Plug & Play",
-            "feat3-p": "Integrates in 5 minutes on Shopify, WooCommerce or custom sites.",
-            "demo-label": "DEMO PREVIEW",
-            "demo-title": isLanding ? "Integration Example" : "Calculate your size in 1 minute",
-            "demo-sub": isLanding ? "This is how your customers will see Footly on your site:" : "Measurement tool for sports shoes: Running, Hiking, Volleyball and Basketball",
-            "demo-title-misure": "Enter your measurements",
-            "instr-title": "1. Customer Instructions",
-            "calc-title": "2. Dynamic Calculator",
-            "lbl-gender": "Gender",
-            "opt-male": "Male",
-            "opt-female": "Female",
-            "lbl-length": "Foot length (cm)",
-            "lbl-width": "Foot width (cm)",
-            "calculate-button": "CALCULATE SIZE",
-            "cta-title": "Ready to optimize your store?",
-            "cta-sub": "Choose Footly's precision for your customers.",
-            "price-tag": "Starting at €29 / month",
-            "btn-contact": "CONTACT US FOR A TRIAL",
-            "lbl-how-to": "How to take measurements",
-            "lbl-how-to-sub": "Measure both feet and enter the size of the longest one.",
-            "v-title": "🛡️ Cross-Validation System",
-            "v-descr": "The system compares EU, UK, and US: the size is accurate when at least 2 out of 3 parameters match the brand's original label. This '2 out of 3 Rule' ensures total precision for Running, Hiking, Volleyball, and Basketball."
-        }
-    };
-    
-    const sel = t[lang];
-    for (let id in sel) {
-        const el = document.getElementById(id);
-        if (el) { el.innerText = sel[id]; }
-    }
-    
-    const res = document.getElementById("result");
-    if(res) res.innerHTML = "";
 }
